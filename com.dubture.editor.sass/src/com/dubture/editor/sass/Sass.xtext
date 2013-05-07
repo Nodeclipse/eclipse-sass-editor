@@ -55,3 +55,8 @@ terminal SELECTOR        :
 						 AMP COLON WORD
 						 | ((SHARP | DOT)? WORD)+
 						 ;
+
+/*Deactivate INT to prevent warnings */
+terminal INT returns ecore::EInt:
+	'INT has been deactivated';
+						 

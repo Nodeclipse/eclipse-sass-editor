@@ -4,6 +4,12 @@
 package com.dubture.editor.sass.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
+
+import com.dubture.editor.sass.ui.editor.AntlrTokenToAttributeIdMapper;
+import com.dubture.editor.sass.ui.editor.SassHighlightingConfiguration;
+import com.google.inject.Binder;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -11,5 +17,13 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class SassUiModule extends com.dubture.editor.sass.ui.AbstractSassUiModule {
 	public SassUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+	@Override
+	public void configure(Binder binder) {
+		super.configure(binder);
+		binder.bind(IHighlightingConfiguration.class).to(SassHighlightingConfiguration.class);
+		binder.bind(AbstractAntlrTokenToAttributeIdMapper.class).to(AntlrTokenToAttributeIdMapper.class);
+		
 	}
 }

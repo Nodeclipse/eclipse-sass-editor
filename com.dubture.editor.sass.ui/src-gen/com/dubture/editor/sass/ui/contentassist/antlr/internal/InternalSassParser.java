@@ -22,29 +22,29 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSassParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WORD", "RULE_VARIABLE", "RULE_CHARSET_ID", "RULE_STRING", "RULE_SC", "RULE_CL", "RULE_BL", "RULE_BR", "RULE_SELECTOR", "RULE_COMMA", "RULE_DOT", "RULE_SHARP", "RULE_DOLLAR", "RULE_AMP", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WORD", "RULE_VARIABLE", "RULE_CHARSET_ID", "RULE_STRING", "RULE_SEMI_COLON", "RULE_COLON", "RULE_BRACE_LEFT", "RULE_BRACE_RIGHT", "RULE_SELECTOR", "RULE_COMMA", "RULE_DOT", "RULE_SHARP", "RULE_DOLLAR", "RULE_AMP", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
     public static final int RULE_AMP=17;
-    public static final int RULE_ID=18;
-    public static final int RULE_BL=10;
+    public static final int RULE_ID=19;
+    public static final int RULE_BRACE_RIGHT=11;
     public static final int RULE_ANY_OTHER=23;
     public static final int RULE_COMMA=13;
     public static final int RULE_SL_COMMENT=21;
     public static final int EOF=-1;
-    public static final int RULE_BR=11;
     public static final int RULE_ML_COMMENT=20;
+    public static final int RULE_BRACE_LEFT=10;
     public static final int RULE_DOLLAR=16;
+    public static final int RULE_COLON=9;
     public static final int RULE_STRING=7;
     public static final int RULE_CHARSET_ID=6;
     public static final int RULE_DOT=14;
     public static final int RULE_VARIABLE=5;
-    public static final int RULE_CL=9;
-    public static final int RULE_INT=19;
+    public static final int RULE_SEMI_COLON=8;
+    public static final int RULE_INT=18;
     public static final int RULE_WS=22;
     public static final int RULE_WORD=4;
     public static final int RULE_SELECTOR=12;
     public static final int RULE_SHARP=15;
-    public static final int RULE_SC=8;
 
     // delegates
     // delegators
@@ -733,7 +733,7 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
             if ( ((LA3_0>=RULE_WORD && LA3_0<=RULE_VARIABLE)) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==RULE_BL) ) {
+            else if ( (LA3_0==RULE_BRACE_LEFT) ) {
                 alt3=2;
             }
             else {
@@ -1437,21 +1437,21 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Charset__Group__2__Impl"
-    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:518:1: rule__Charset__Group__2__Impl : ( RULE_SC ) ;
+    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:518:1: rule__Charset__Group__2__Impl : ( RULE_SEMI_COLON ) ;
     public final void rule__Charset__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:522:1: ( ( RULE_SC ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:523:1: ( RULE_SC )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:522:1: ( ( RULE_SEMI_COLON ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:523:1: ( RULE_SEMI_COLON )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:523:1: ( RULE_SC )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:524:1: RULE_SC
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:523:1: ( RULE_SEMI_COLON )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:524:1: RULE_SEMI_COLON
             {
-             before(grammarAccess.getCharsetAccess().getSCTerminalRuleCall_2()); 
-            match(input,RULE_SC,FOLLOW_RULE_SC_in_rule__Charset__Group__2__Impl1034); 
-             after(grammarAccess.getCharsetAccess().getSCTerminalRuleCall_2()); 
+             before(grammarAccess.getCharsetAccess().getSEMI_COLONTerminalRuleCall_2()); 
+            match(input,RULE_SEMI_COLON,FOLLOW_RULE_SEMI_COLON_in_rule__Charset__Group__2__Impl1034); 
+             after(grammarAccess.getCharsetAccess().getSEMI_COLONTerminalRuleCall_2()); 
 
             }
 
@@ -1587,21 +1587,21 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__1__Impl"
-    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:582:1: rule__VariableDeclaration__Group__1__Impl : ( RULE_CL ) ;
+    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:582:1: rule__VariableDeclaration__Group__1__Impl : ( RULE_COLON ) ;
     public final void rule__VariableDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:586:1: ( ( RULE_CL ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:587:1: ( RULE_CL )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:586:1: ( ( RULE_COLON ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:587:1: ( RULE_COLON )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:587:1: ( RULE_CL )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:588:1: RULE_CL
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:587:1: ( RULE_COLON )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:588:1: RULE_COLON
             {
-             before(grammarAccess.getVariableDeclarationAccess().getCLTerminalRuleCall_1()); 
-            match(input,RULE_CL,FOLLOW_RULE_CL_in_rule__VariableDeclaration__Group__1__Impl1158); 
-             after(grammarAccess.getVariableDeclarationAccess().getCLTerminalRuleCall_1()); 
+             before(grammarAccess.getVariableDeclarationAccess().getCOLONTerminalRuleCall_1()); 
+            match(input,RULE_COLON,FOLLOW_RULE_COLON_in_rule__VariableDeclaration__Group__1__Impl1158); 
+             after(grammarAccess.getVariableDeclarationAccess().getCOLONTerminalRuleCall_1()); 
 
             }
 
@@ -1732,21 +1732,21 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableDeclaration__Group__3__Impl"
-    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:639:1: rule__VariableDeclaration__Group__3__Impl : ( RULE_SC ) ;
+    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:639:1: rule__VariableDeclaration__Group__3__Impl : ( RULE_SEMI_COLON ) ;
     public final void rule__VariableDeclaration__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:643:1: ( ( RULE_SC ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:644:1: ( RULE_SC )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:643:1: ( ( RULE_SEMI_COLON ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:644:1: ( RULE_SEMI_COLON )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:644:1: ( RULE_SC )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:645:1: RULE_SC
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:644:1: ( RULE_SEMI_COLON )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:645:1: RULE_SEMI_COLON
             {
-             before(grammarAccess.getVariableDeclarationAccess().getSCTerminalRuleCall_3()); 
-            match(input,RULE_SC,FOLLOW_RULE_SC_in_rule__VariableDeclaration__Group__3__Impl1273); 
-             after(grammarAccess.getVariableDeclarationAccess().getSCTerminalRuleCall_3()); 
+             before(grammarAccess.getVariableDeclarationAccess().getSEMI_COLONTerminalRuleCall_3()); 
+            match(input,RULE_SEMI_COLON,FOLLOW_RULE_SEMI_COLON_in_rule__VariableDeclaration__Group__3__Impl1273); 
+             after(grammarAccess.getVariableDeclarationAccess().getSEMI_COLONTerminalRuleCall_3()); 
 
             }
 
@@ -1886,21 +1886,21 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:705:1: rule__Rule__Group__1__Impl : ( RULE_BL ) ;
+    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:705:1: rule__Rule__Group__1__Impl : ( RULE_BRACE_LEFT ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:709:1: ( ( RULE_BL ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:710:1: ( RULE_BL )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:709:1: ( ( RULE_BRACE_LEFT ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:710:1: ( RULE_BRACE_LEFT )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:710:1: ( RULE_BL )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:711:1: RULE_BL
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:710:1: ( RULE_BRACE_LEFT )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:711:1: RULE_BRACE_LEFT
             {
-             before(grammarAccess.getRuleAccess().getBLTerminalRuleCall_1()); 
-            match(input,RULE_BL,FOLLOW_RULE_BL_in_rule__Rule__Group__1__Impl1399); 
-             after(grammarAccess.getRuleAccess().getBLTerminalRuleCall_1()); 
+             before(grammarAccess.getRuleAccess().getBRACE_LEFTTerminalRuleCall_1()); 
+            match(input,RULE_BRACE_LEFT,FOLLOW_RULE_BRACE_LEFT_in_rule__Rule__Group__1__Impl1399); 
+             after(grammarAccess.getRuleAccess().getBRACE_LEFTTerminalRuleCall_1()); 
 
             }
 
@@ -2035,21 +2035,21 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__3__Impl"
-    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:762:1: rule__Rule__Group__3__Impl : ( RULE_BR ) ;
+    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:762:1: rule__Rule__Group__3__Impl : ( RULE_BRACE_RIGHT ) ;
     public final void rule__Rule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:766:1: ( ( RULE_BR ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:767:1: ( RULE_BR )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:766:1: ( ( RULE_BRACE_RIGHT ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:767:1: ( RULE_BRACE_RIGHT )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:767:1: ( RULE_BR )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:768:1: RULE_BR
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:767:1: ( RULE_BRACE_RIGHT )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:768:1: RULE_BRACE_RIGHT
             {
-             before(grammarAccess.getRuleAccess().getBRTerminalRuleCall_3()); 
-            match(input,RULE_BR,FOLLOW_RULE_BR_in_rule__Rule__Group__3__Impl1514); 
-             after(grammarAccess.getRuleAccess().getBRTerminalRuleCall_3()); 
+             before(grammarAccess.getRuleAccess().getBRACE_RIGHTTerminalRuleCall_3()); 
+            match(input,RULE_BRACE_RIGHT,FOLLOW_RULE_BRACE_RIGHT_in_rule__Rule__Group__3__Impl1514); 
+             after(grammarAccess.getRuleAccess().getBRACE_RIGHTTerminalRuleCall_3()); 
 
             }
 
@@ -2503,21 +2503,21 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PropertyDeclaration__Group__1__Impl"
-    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:950:1: rule__PropertyDeclaration__Group__1__Impl : ( RULE_CL ) ;
+    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:950:1: rule__PropertyDeclaration__Group__1__Impl : ( RULE_COLON ) ;
     public final void rule__PropertyDeclaration__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:954:1: ( ( RULE_CL ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:955:1: ( RULE_CL )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:954:1: ( ( RULE_COLON ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:955:1: ( RULE_COLON )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:955:1: ( RULE_CL )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:956:1: RULE_CL
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:955:1: ( RULE_COLON )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:956:1: RULE_COLON
             {
-             before(grammarAccess.getPropertyDeclarationAccess().getCLTerminalRuleCall_1()); 
-            match(input,RULE_CL,FOLLOW_RULE_CL_in_rule__PropertyDeclaration__Group__1__Impl1880); 
-             after(grammarAccess.getPropertyDeclarationAccess().getCLTerminalRuleCall_1()); 
+             before(grammarAccess.getPropertyDeclarationAccess().getCOLONTerminalRuleCall_1()); 
+            match(input,RULE_COLON,FOLLOW_RULE_COLON_in_rule__PropertyDeclaration__Group__1__Impl1880); 
+             after(grammarAccess.getPropertyDeclarationAccess().getCOLONTerminalRuleCall_1()); 
 
             }
 
@@ -2781,21 +2781,21 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PropertyDeclaration__Group_2_0__1__Impl"
-    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1048:1: rule__PropertyDeclaration__Group_2_0__1__Impl : ( RULE_SC ) ;
+    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1048:1: rule__PropertyDeclaration__Group_2_0__1__Impl : ( RULE_SEMI_COLON ) ;
     public final void rule__PropertyDeclaration__Group_2_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1052:1: ( ( RULE_SC ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1053:1: ( RULE_SC )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1052:1: ( ( RULE_SEMI_COLON ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1053:1: ( RULE_SEMI_COLON )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1053:1: ( RULE_SC )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1054:1: RULE_SC
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1053:1: ( RULE_SEMI_COLON )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1054:1: RULE_SEMI_COLON
             {
-             before(grammarAccess.getPropertyDeclarationAccess().getSCTerminalRuleCall_2_0_1()); 
-            match(input,RULE_SC,FOLLOW_RULE_SC_in_rule__PropertyDeclaration__Group_2_0__1__Impl2076); 
-             after(grammarAccess.getPropertyDeclarationAccess().getSCTerminalRuleCall_2_0_1()); 
+             before(grammarAccess.getPropertyDeclarationAccess().getSEMI_COLONTerminalRuleCall_2_0_1()); 
+            match(input,RULE_SEMI_COLON,FOLLOW_RULE_SEMI_COLON_in_rule__PropertyDeclaration__Group_2_0__1__Impl2076); 
+             after(grammarAccess.getPropertyDeclarationAccess().getSEMI_COLONTerminalRuleCall_2_0_1()); 
 
             }
 
@@ -2856,21 +2856,21 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PropertyDeclaration__Group_2_1__0__Impl"
-    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1081:1: rule__PropertyDeclaration__Group_2_1__0__Impl : ( RULE_BL ) ;
+    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1081:1: rule__PropertyDeclaration__Group_2_1__0__Impl : ( RULE_BRACE_LEFT ) ;
     public final void rule__PropertyDeclaration__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1085:1: ( ( RULE_BL ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1086:1: ( RULE_BL )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1085:1: ( ( RULE_BRACE_LEFT ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1086:1: ( RULE_BRACE_LEFT )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1086:1: ( RULE_BL )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1087:1: RULE_BL
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1086:1: ( RULE_BRACE_LEFT )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1087:1: RULE_BRACE_LEFT
             {
-             before(grammarAccess.getPropertyDeclarationAccess().getBLTerminalRuleCall_2_1_0()); 
-            match(input,RULE_BL,FOLLOW_RULE_BL_in_rule__PropertyDeclaration__Group_2_1__0__Impl2139); 
-             after(grammarAccess.getPropertyDeclarationAccess().getBLTerminalRuleCall_2_1_0()); 
+             before(grammarAccess.getPropertyDeclarationAccess().getBRACE_LEFTTerminalRuleCall_2_1_0()); 
+            match(input,RULE_BRACE_LEFT,FOLLOW_RULE_BRACE_LEFT_in_rule__PropertyDeclaration__Group_2_1__0__Impl2139); 
+             after(grammarAccess.getPropertyDeclarationAccess().getBRACE_LEFTTerminalRuleCall_2_1_0()); 
 
             }
 
@@ -3029,21 +3029,21 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PropertyDeclaration__Group_2_1__2__Impl"
-    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1138:1: rule__PropertyDeclaration__Group_2_1__2__Impl : ( RULE_BR ) ;
+    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1138:1: rule__PropertyDeclaration__Group_2_1__2__Impl : ( RULE_BRACE_RIGHT ) ;
     public final void rule__PropertyDeclaration__Group_2_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1142:1: ( ( RULE_BR ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1143:1: ( RULE_BR )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1142:1: ( ( RULE_BRACE_RIGHT ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1143:1: ( RULE_BRACE_RIGHT )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1143:1: ( RULE_BR )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1144:1: RULE_BR
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1143:1: ( RULE_BRACE_RIGHT )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1144:1: RULE_BRACE_RIGHT
             {
-             before(grammarAccess.getPropertyDeclarationAccess().getBRTerminalRuleCall_2_1_2()); 
-            match(input,RULE_BR,FOLLOW_RULE_BR_in_rule__PropertyDeclaration__Group_2_1__2__Impl2257); 
-             after(grammarAccess.getPropertyDeclarationAccess().getBRTerminalRuleCall_2_1_2()); 
+             before(grammarAccess.getPropertyDeclarationAccess().getBRACE_RIGHTTerminalRuleCall_2_1_2()); 
+            match(input,RULE_BRACE_RIGHT,FOLLOW_RULE_BRACE_RIGHT_in_rule__PropertyDeclaration__Group_2_1__2__Impl2257); 
+             after(grammarAccess.getPropertyDeclarationAccess().getBRACE_RIGHTTerminalRuleCall_2_1_2()); 
 
             }
 
@@ -3154,29 +3154,29 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Charset__Group__2_in_rule__Charset__Group__1951 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__Charset__Group__1__Impl978 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Charset__Group__2__Impl_in_rule__Charset__Group__21007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SC_in_rule__Charset__Group__2__Impl1034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SEMI_COLON_in_rule__Charset__Group__2__Impl1034 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableDeclaration__Group__0__Impl_in_rule__VariableDeclaration__Group__01069 = new BitSet(new long[]{0x0000000000000200L});
     public static final BitSet FOLLOW_rule__VariableDeclaration__Group__1_in_rule__VariableDeclaration__Group__01072 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_VARIABLE_in_rule__VariableDeclaration__Group__0__Impl1099 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableDeclaration__Group__1__Impl_in_rule__VariableDeclaration__Group__11128 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__VariableDeclaration__Group__2_in_rule__VariableDeclaration__Group__11131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CL_in_rule__VariableDeclaration__Group__1__Impl1158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COLON_in_rule__VariableDeclaration__Group__1__Impl1158 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableDeclaration__Group__2__Impl_in_rule__VariableDeclaration__Group__21187 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_rule__VariableDeclaration__Group__3_in_rule__VariableDeclaration__Group__21190 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_WORD_in_rule__VariableDeclaration__Group__2__Impl1217 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__VariableDeclaration__Group__3__Impl_in_rule__VariableDeclaration__Group__31246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SC_in_rule__VariableDeclaration__Group__3__Impl1273 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SEMI_COLON_in_rule__VariableDeclaration__Group__3__Impl1273 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__01310 = new BitSet(new long[]{0x0000000000000400L});
     public static final BitSet FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__01313 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRuleHead_in_rule__Rule__Group__0__Impl1340 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__11369 = new BitSet(new long[]{0x0000000000001010L});
     public static final BitSet FOLLOW_rule__Rule__Group__2_in_rule__Rule__Group__11372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_BL_in_rule__Rule__Group__1__Impl1399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_BRACE_LEFT_in_rule__Rule__Group__1__Impl1399 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Rule__Group__2__Impl_in_rule__Rule__Group__21428 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_rule__Rule__Group__3_in_rule__Rule__Group__21431 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRuleBody_in_rule__Rule__Group__2__Impl1458 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Rule__Group__3__Impl_in_rule__Rule__Group__31487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_BR_in_rule__Rule__Group__3__Impl1514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_BRACE_RIGHT_in_rule__Rule__Group__3__Impl1514 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__RuleHead__Group__0__Impl_in_rule__RuleHead__Group__01551 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_rule__RuleHead__Group__1_in_rule__RuleHead__Group__01554 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_SELECTOR_in_rule__RuleHead__Group__0__Impl1581 = new BitSet(new long[]{0x0000000000000002L});
@@ -3192,7 +3192,7 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_WORD_in_rule__PropertyDeclaration__Group__0__Impl1821 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group__1__Impl_in_rule__PropertyDeclaration__Group__11850 = new BitSet(new long[]{0x0000000000000430L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group__2_in_rule__PropertyDeclaration__Group__11853 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CL_in_rule__PropertyDeclaration__Group__1__Impl1880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COLON_in_rule__PropertyDeclaration__Group__1__Impl1880 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group__2__Impl_in_rule__PropertyDeclaration__Group__21909 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Alternatives_2_in_rule__PropertyDeclaration__Group__2__Impl1936 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group_2_0__0__Impl_in_rule__PropertyDeclaration__Group_2_0__01972 = new BitSet(new long[]{0x0000000000000100L});
@@ -3200,15 +3200,15 @@ public class InternalSassParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Alternatives_2_0_0_in_rule__PropertyDeclaration__Group_2_0__0__Impl2004 = new BitSet(new long[]{0x0000000000000032L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Alternatives_2_0_0_in_rule__PropertyDeclaration__Group_2_0__0__Impl2016 = new BitSet(new long[]{0x0000000000000032L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group_2_0__1__Impl_in_rule__PropertyDeclaration__Group_2_0__12049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SC_in_rule__PropertyDeclaration__Group_2_0__1__Impl2076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SEMI_COLON_in_rule__PropertyDeclaration__Group_2_0__1__Impl2076 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group_2_1__0__Impl_in_rule__PropertyDeclaration__Group_2_1__02109 = new BitSet(new long[]{0x0000000000000810L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group_2_1__1_in_rule__PropertyDeclaration__Group_2_1__02112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_BL_in_rule__PropertyDeclaration__Group_2_1__0__Impl2139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_BRACE_LEFT_in_rule__PropertyDeclaration__Group_2_1__0__Impl2139 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group_2_1__1__Impl_in_rule__PropertyDeclaration__Group_2_1__12168 = new BitSet(new long[]{0x0000000000000810L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group_2_1__2_in_rule__PropertyDeclaration__Group_2_1__12171 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePropertyDeclaration_in_rule__PropertyDeclaration__Group_2_1__1__Impl2199 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_rule__PropertyDeclaration__Group_2_1__2__Impl_in_rule__PropertyDeclaration__Group_2_1__22230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_BR_in_rule__PropertyDeclaration__Group_2_1__2__Impl2257 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_BRACE_RIGHT_in_rule__PropertyDeclaration__Group_2_1__2__Impl2257 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRule_in_rule__Sass__StatementsAssignment_32297 = new BitSet(new long[]{0x0000000000000002L});
 
 }

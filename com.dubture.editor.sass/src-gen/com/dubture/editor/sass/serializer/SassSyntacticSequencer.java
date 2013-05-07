@@ -38,7 +38,7 @@ public class SassSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Charset:
-	 * 	CHARSET_ID STRING SC
+	 * 	CHARSET_ID STRING SEMI_COLON
 	 * ;
 	 */
 	protected String getCharsetToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -49,7 +49,7 @@ public class SassSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * VariableDeclaration:
-	 * 	VARIABLE CL WORD SC
+	 * 	VARIABLE COLON WORD SEMI_COLON
 	 * ;
 	 */
 	protected String getVariableDeclarationToken(EObject semanticObject, RuleCall ruleCall, INode node) {

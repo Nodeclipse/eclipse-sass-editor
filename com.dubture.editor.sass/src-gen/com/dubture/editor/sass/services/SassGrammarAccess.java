@@ -55,13 +55,13 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cCHARSET_IDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final RuleCall cSCTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final RuleCall cSEMI_COLONTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//Charset:
-		//	CHARSET_ID STRING SC;
+		//	CHARSET_ID STRING SEMI_COLON;
 		public ParserRule getRule() { return rule; }
 
-		//CHARSET_ID STRING SC
+		//CHARSET_ID STRING SEMI_COLON
 		public Group getGroup() { return cGroup; }
 
 		//CHARSET_ID
@@ -70,64 +70,64 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
 
-		//SC
-		public RuleCall getSCTerminalRuleCall_2() { return cSCTerminalRuleCall_2; }
+		//SEMI_COLON
+		public RuleCall getSEMI_COLONTerminalRuleCall_2() { return cSEMI_COLONTerminalRuleCall_2; }
 	}
 
 	public class VariableDeclarationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "VariableDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cVARIABLETerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cCLTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cCOLONTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final RuleCall cWORDTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cSCTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final RuleCall cSEMI_COLONTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//VariableDeclaration:
-		//	VARIABLE CL WORD SC;
+		//	VARIABLE COLON WORD SEMI_COLON;
 		public ParserRule getRule() { return rule; }
 
-		//VARIABLE CL WORD SC
+		//VARIABLE COLON WORD SEMI_COLON
 		public Group getGroup() { return cGroup; }
 
 		//VARIABLE
 		public RuleCall getVARIABLETerminalRuleCall_0() { return cVARIABLETerminalRuleCall_0; }
 
-		//CL
-		public RuleCall getCLTerminalRuleCall_1() { return cCLTerminalRuleCall_1; }
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_1() { return cCOLONTerminalRuleCall_1; }
 
 		//WORD
 		public RuleCall getWORDTerminalRuleCall_2() { return cWORDTerminalRuleCall_2; }
 
-		//SC
-		public RuleCall getSCTerminalRuleCall_3() { return cSCTerminalRuleCall_3; }
+		//SEMI_COLON
+		public RuleCall getSEMI_COLONTerminalRuleCall_3() { return cSEMI_COLONTerminalRuleCall_3; }
 	}
 
 	public class RuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Rule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cRuleHeadParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cBLTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cBRACE_LEFTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final RuleCall cRuleBodyParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
-		private final RuleCall cBRTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final RuleCall cBRACE_RIGHTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//Rule:
-		//	RuleHead BL RuleBody BR;
+		//	RuleHead BRACE_LEFT RuleBody BRACE_RIGHT;
 		public ParserRule getRule() { return rule; }
 
-		//RuleHead BL RuleBody BR
+		//RuleHead BRACE_LEFT RuleBody BRACE_RIGHT
 		public Group getGroup() { return cGroup; }
 
 		//RuleHead
 		public RuleCall getRuleHeadParserRuleCall_0() { return cRuleHeadParserRuleCall_0; }
 
-		//BL
-		public RuleCall getBLTerminalRuleCall_1() { return cBLTerminalRuleCall_1; }
+		//BRACE_LEFT
+		public RuleCall getBRACE_LEFTTerminalRuleCall_1() { return cBRACE_LEFTTerminalRuleCall_1; }
 
 		//RuleBody
 		public RuleCall getRuleBodyParserRuleCall_2() { return cRuleBodyParserRuleCall_2; }
 
-		//BR
-		public RuleCall getBRTerminalRuleCall_3() { return cBRTerminalRuleCall_3; }
+		//BRACE_RIGHT
+		public RuleCall getBRACE_RIGHTTerminalRuleCall_3() { return cBRACE_RIGHTTerminalRuleCall_3; }
 	}
 
 	public class RuleHeadElements extends AbstractParserRuleElementFinder {
@@ -182,35 +182,35 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PropertyDeclaration");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cWORDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final RuleCall cCLTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final RuleCall cCOLONTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
 		private final Group cGroup_2_0 = (Group)cAlternatives_2.eContents().get(0);
 		private final Alternatives cAlternatives_2_0_0 = (Alternatives)cGroup_2_0.eContents().get(0);
 		private final RuleCall cWORDTerminalRuleCall_2_0_0_0 = (RuleCall)cAlternatives_2_0_0.eContents().get(0);
 		private final RuleCall cVARIABLETerminalRuleCall_2_0_0_1 = (RuleCall)cAlternatives_2_0_0.eContents().get(1);
-		private final RuleCall cSCTerminalRuleCall_2_0_1 = (RuleCall)cGroup_2_0.eContents().get(1);
+		private final RuleCall cSEMI_COLONTerminalRuleCall_2_0_1 = (RuleCall)cGroup_2_0.eContents().get(1);
 		private final Group cGroup_2_1 = (Group)cAlternatives_2.eContents().get(1);
-		private final RuleCall cBLTerminalRuleCall_2_1_0 = (RuleCall)cGroup_2_1.eContents().get(0);
+		private final RuleCall cBRACE_LEFTTerminalRuleCall_2_1_0 = (RuleCall)cGroup_2_1.eContents().get(0);
 		private final RuleCall cPropertyDeclarationParserRuleCall_2_1_1 = (RuleCall)cGroup_2_1.eContents().get(1);
-		private final RuleCall cBRTerminalRuleCall_2_1_2 = (RuleCall)cGroup_2_1.eContents().get(2);
+		private final RuleCall cBRACE_RIGHTTerminalRuleCall_2_1_2 = (RuleCall)cGroup_2_1.eContents().get(2);
 		
 		//PropertyDeclaration:
-		//	WORD CL ((WORD | VARIABLE)+ SC | BL PropertyDeclaration* BR);
+		//	WORD COLON ((WORD | VARIABLE)+ SEMI_COLON | BRACE_LEFT PropertyDeclaration* BRACE_RIGHT);
 		public ParserRule getRule() { return rule; }
 
-		//WORD CL ((WORD | VARIABLE)+ SC | BL PropertyDeclaration* BR)
+		//WORD COLON ((WORD | VARIABLE)+ SEMI_COLON | BRACE_LEFT PropertyDeclaration* BRACE_RIGHT)
 		public Group getGroup() { return cGroup; }
 
 		//WORD
 		public RuleCall getWORDTerminalRuleCall_0() { return cWORDTerminalRuleCall_0; }
 
-		//CL
-		public RuleCall getCLTerminalRuleCall_1() { return cCLTerminalRuleCall_1; }
+		//COLON
+		public RuleCall getCOLONTerminalRuleCall_1() { return cCOLONTerminalRuleCall_1; }
 
-		//(WORD | VARIABLE)+ SC | BL PropertyDeclaration* BR
+		//(WORD | VARIABLE)+ SEMI_COLON | BRACE_LEFT PropertyDeclaration* BRACE_RIGHT
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
-		//(WORD | VARIABLE)+ SC
+		//(WORD | VARIABLE)+ SEMI_COLON
 		public Group getGroup_2_0() { return cGroup_2_0; }
 
 		//(WORD | VARIABLE)+
@@ -222,20 +222,20 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 		//VARIABLE
 		public RuleCall getVARIABLETerminalRuleCall_2_0_0_1() { return cVARIABLETerminalRuleCall_2_0_0_1; }
 
-		//SC
-		public RuleCall getSCTerminalRuleCall_2_0_1() { return cSCTerminalRuleCall_2_0_1; }
+		//SEMI_COLON
+		public RuleCall getSEMI_COLONTerminalRuleCall_2_0_1() { return cSEMI_COLONTerminalRuleCall_2_0_1; }
 
-		//BL PropertyDeclaration* BR
+		//BRACE_LEFT PropertyDeclaration* BRACE_RIGHT
 		public Group getGroup_2_1() { return cGroup_2_1; }
 
-		//BL
-		public RuleCall getBLTerminalRuleCall_2_1_0() { return cBLTerminalRuleCall_2_1_0; }
+		//BRACE_LEFT
+		public RuleCall getBRACE_LEFTTerminalRuleCall_2_1_0() { return cBRACE_LEFTTerminalRuleCall_2_1_0; }
 
 		//PropertyDeclaration*
 		public RuleCall getPropertyDeclarationParserRuleCall_2_1_1() { return cPropertyDeclarationParserRuleCall_2_1_1; }
 
-		//BR
-		public RuleCall getBRTerminalRuleCall_2_1_2() { return cBRTerminalRuleCall_2_1_2; }
+		//BRACE_RIGHT
+		public RuleCall getBRACE_RIGHTTerminalRuleCall_2_1_2() { return cBRACE_RIGHTTerminalRuleCall_2_1_2; }
 	}
 	
 	
@@ -249,16 +249,17 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tDOT;
 	private TerminalRule tCOMMA;
 	private TerminalRule tSHARP;
-	private TerminalRule tCL;
-	private TerminalRule tSC;
-	private TerminalRule tBL;
-	private TerminalRule tBR;
+	private TerminalRule tCOLON;
+	private TerminalRule tSEMI_COLON;
+	private TerminalRule tBRACE_LEFT;
+	private TerminalRule tBRACE_RIGHT;
 	private TerminalRule tDOLLAR;
 	private TerminalRule tAMP;
 	private TerminalRule tCHARSET_ID;
 	private TerminalRule tWORD;
 	private TerminalRule tVARIABLE;
 	private TerminalRule tSELECTOR;
+	private TerminalRule tINT;
 	
 	private final Grammar grammar;
 
@@ -309,7 +310,7 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Charset:
-	//	CHARSET_ID STRING SC;
+	//	CHARSET_ID STRING SEMI_COLON;
 	public CharsetElements getCharsetAccess() {
 		return (pCharset != null) ? pCharset : (pCharset = new CharsetElements());
 	}
@@ -319,7 +320,7 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VariableDeclaration:
-	//	VARIABLE CL WORD SC;
+	//	VARIABLE COLON WORD SEMI_COLON;
 	public VariableDeclarationElements getVariableDeclarationAccess() {
 		return (pVariableDeclaration != null) ? pVariableDeclaration : (pVariableDeclaration = new VariableDeclarationElements());
 	}
@@ -329,7 +330,7 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Rule:
-	//	RuleHead BL RuleBody BR;
+	//	RuleHead BRACE_LEFT RuleBody BRACE_RIGHT;
 	public RuleElements getRuleAccess() {
 		return (pRule != null) ? pRule : (pRule = new RuleElements());
 	}
@@ -359,7 +360,7 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PropertyDeclaration:
-	//	WORD CL ((WORD | VARIABLE)+ SC | BL PropertyDeclaration* BR);
+	//	WORD COLON ((WORD | VARIABLE)+ SEMI_COLON | BRACE_LEFT PropertyDeclaration* BRACE_RIGHT);
 	public PropertyDeclarationElements getPropertyDeclarationAccess() {
 		return (pPropertyDeclaration != null) ? pPropertyDeclaration : (pPropertyDeclaration = new PropertyDeclarationElements());
 	}
@@ -386,28 +387,28 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 		return (tSHARP != null) ? tSHARP : (tSHARP = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SHARP"));
 	} 
 
-	//terminal CL:
+	//terminal COLON:
 	//	":";
-	public TerminalRule getCLRule() {
-		return (tCL != null) ? tCL : (tCL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "CL"));
+	public TerminalRule getCOLONRule() {
+		return (tCOLON != null) ? tCOLON : (tCOLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "COLON"));
 	} 
 
-	//terminal SC:
+	//terminal SEMI_COLON:
 	//	";";
-	public TerminalRule getSCRule() {
-		return (tSC != null) ? tSC : (tSC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SC"));
+	public TerminalRule getSEMI_COLONRule() {
+		return (tSEMI_COLON != null) ? tSEMI_COLON : (tSEMI_COLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SEMI_COLON"));
 	} 
 
-	//terminal BL:
+	//terminal BRACE_LEFT:
 	//	"{";
-	public TerminalRule getBLRule() {
-		return (tBL != null) ? tBL : (tBL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BL"));
+	public TerminalRule getBRACE_LEFTRule() {
+		return (tBRACE_LEFT != null) ? tBRACE_LEFT : (tBRACE_LEFT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BRACE_LEFT"));
 	} 
 
-	//terminal BR:
+	//terminal BRACE_RIGHT:
 	//	"}";
-	public TerminalRule getBRRule() {
-		return (tBR != null) ? tBR : (tBR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BR"));
+	public TerminalRule getBRACE_RIGHTRule() {
+		return (tBRACE_RIGHT != null) ? tBRACE_RIGHT : (tBRACE_RIGHT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BRACE_RIGHT"));
 	} 
 
 	//terminal DOLLAR:
@@ -441,21 +442,21 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal SELECTOR:
-	//	AMP CL WORD | ((SHARP | DOT)? WORD)+;
+	//	AMP COLON WORD | ((SHARP | DOT)? WORD)+;
 	public TerminalRule getSELECTORRule() {
 		return (tSELECTOR != null) ? tSELECTOR : (tSELECTOR = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SELECTOR"));
+	} 
+
+	//terminal INT returns ecore::EInt:
+	//	"this one has been deactivated";
+	public TerminalRule getINTRule() {
+		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
 	} 
 
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
 		return gaTerminals.getIDRule();
-	} 
-
-	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
-	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
 	} 
 
 	//terminal STRING:
