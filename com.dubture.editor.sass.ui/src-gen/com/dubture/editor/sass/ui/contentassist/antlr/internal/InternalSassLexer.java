@@ -12,26 +12,27 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalSassLexer extends Lexer {
-    public static final int RULE_AMP=17;
-    public static final int RULE_ID=19;
-    public static final int RULE_BRACE_RIGHT=11;
-    public static final int RULE_ANY_OTHER=23;
-    public static final int RULE_COMMA=13;
+    public static final int RULE_AMP=18;
+    public static final int RULE_ID=20;
+    public static final int RULE_BRACE_RIGHT=12;
+    public static final int RULE_ANY_OTHER=24;
+    public static final int RULE_COMMA=14;
+    public static final int RULE_INCLUDE_ID=9;
     public static final int EOF=-1;
-    public static final int RULE_SL_COMMENT=21;
-    public static final int RULE_ML_COMMENT=20;
-    public static final int RULE_BRACE_LEFT=10;
-    public static final int RULE_DOLLAR=16;
-    public static final int RULE_COLON=9;
+    public static final int RULE_SL_COMMENT=22;
+    public static final int RULE_ML_COMMENT=21;
+    public static final int RULE_BRACE_LEFT=11;
+    public static final int RULE_DOLLAR=17;
+    public static final int RULE_COLON=10;
     public static final int RULE_STRING=7;
     public static final int RULE_CHARSET_ID=6;
-    public static final int RULE_DOT=14;
+    public static final int RULE_DOT=15;
     public static final int RULE_VARIABLE=5;
     public static final int RULE_SEMI_COLON=8;
-    public static final int RULE_INT=18;
-    public static final int RULE_WS=22;
-    public static final int RULE_SHARP=15;
-    public static final int RULE_SELECTOR=12;
+    public static final int RULE_INT=19;
+    public static final int RULE_WS=23;
+    public static final int RULE_SHARP=16;
+    public static final int RULE_SELECTOR=13;
     public static final int RULE_WORD=4;
 
     // delegates
@@ -52,8 +53,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1178:10: ( '.' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1178:12: '.'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1304:10: ( '.' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1304:12: '.'
             {
             match('.'); 
 
@@ -72,8 +73,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1180:12: ( ',' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1180:14: ','
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1306:12: ( ',' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1306:14: ','
             {
             match(','); 
 
@@ -92,8 +93,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_SHARP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1182:12: ( '#' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1182:14: '#'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1308:12: ( '#' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1308:14: '#'
             {
             match('#'); 
 
@@ -112,8 +113,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1184:12: ( ':' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1184:14: ':'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1310:12: ( ':' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1310:14: ':'
             {
             match(':'); 
 
@@ -132,8 +133,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_SEMI_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1186:17: ( ';' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1186:19: ';'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1312:17: ( ';' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1312:19: ';'
             {
             match(';'); 
 
@@ -152,8 +153,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_BRACE_LEFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1188:17: ( '{' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1188:19: '{'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1314:17: ( '{' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1314:19: '{'
             {
             match('{'); 
 
@@ -172,8 +173,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_BRACE_RIGHT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1190:18: ( '}' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1190:20: '}'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1316:18: ( '}' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1316:20: '}'
             {
             match('}'); 
 
@@ -192,8 +193,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_DOLLAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1192:13: ( '$' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1192:15: '$'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1318:13: ( '$' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1318:15: '$'
             {
             match('$'); 
 
@@ -212,8 +213,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_AMP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1194:10: ( '&' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1194:12: '&'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1320:10: ( '&' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1320:12: '&'
             {
             match('&'); 
 
@@ -232,8 +233,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_CHARSET_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1196:17: ( '@charset ' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1196:19: '@charset '
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1322:17: ( '@charset ' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1322:19: '@charset '
             {
             match("@charset "); 
 
@@ -248,15 +249,36 @@ public class InternalSassLexer extends Lexer {
     }
     // $ANTLR end "RULE_CHARSET_ID"
 
+    // $ANTLR start "RULE_INCLUDE_ID"
+    public final void mRULE_INCLUDE_ID() throws RecognitionException {
+        try {
+            int _type = RULE_INCLUDE_ID;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1324:17: ( '@include' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1324:19: '@include'
+            {
+            match("@include"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RULE_INCLUDE_ID"
+
     // $ANTLR start "RULE_WORD"
     public final void mRULE_WORD() throws RecognitionException {
         try {
             int _type = RULE_WORD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1198:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '%' )+ )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1198:13: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '%' )+
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1326:11: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '%' )+ )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1326:13: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '%' )+
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1198:13: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '%' )+
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1326:13: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '-' | '%' )+
             int cnt1=0;
             loop1:
             do {
@@ -310,8 +332,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_VARIABLE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1200:15: ( RULE_DOLLAR RULE_WORD )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1200:17: RULE_DOLLAR RULE_WORD
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1328:15: ( RULE_DOLLAR RULE_WORD )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1328:17: RULE_DOLLAR RULE_WORD
             {
             mRULE_DOLLAR(); 
             mRULE_WORD(); 
@@ -331,10 +353,10 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_SELECTOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1202:15: ( ( RULE_AMP RULE_COLON RULE_WORD | ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+ ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1202:17: ( RULE_AMP RULE_COLON RULE_WORD | ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+ )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1330:15: ( ( RULE_AMP RULE_COLON RULE_WORD | ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+ ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1330:17: ( RULE_AMP RULE_COLON RULE_WORD | ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+ )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1202:17: ( RULE_AMP RULE_COLON RULE_WORD | ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+ )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1330:17: ( RULE_AMP RULE_COLON RULE_WORD | ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+ )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -352,7 +374,7 @@ public class InternalSassLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1202:18: RULE_AMP RULE_COLON RULE_WORD
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1330:18: RULE_AMP RULE_COLON RULE_WORD
                     {
                     mRULE_AMP(); 
                     mRULE_COLON(); 
@@ -361,9 +383,9 @@ public class InternalSassLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1202:48: ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1330:48: ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+
                     {
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1202:48: ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1330:48: ( ( RULE_SHARP | RULE_DOT )? RULE_WORD )+
                     int cnt3=0;
                     loop3:
                     do {
@@ -377,9 +399,9 @@ public class InternalSassLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1202:49: ( RULE_SHARP | RULE_DOT )? RULE_WORD
+                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1330:49: ( RULE_SHARP | RULE_DOT )? RULE_WORD
                     	    {
-                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1202:49: ( RULE_SHARP | RULE_DOT )?
+                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1330:49: ( RULE_SHARP | RULE_DOT )?
                     	    int alt2=2;
                     	    int LA2_0 = input.LA(1);
 
@@ -441,10 +463,10 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1204:10: ( 'this one has been deactivated' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1204:12: 'this one has been deactivated'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1332:10: ( 'INT has been deactivated' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1332:12: 'INT has been deactivated'
             {
-            match("this one has been deactivated"); 
+            match("INT has been deactivated"); 
 
 
             }
@@ -462,10 +484,10 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1206:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1206:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1334:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1334:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1206:11: ( '^' )?
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1334:11: ( '^' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -474,7 +496,7 @@ public class InternalSassLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1206:11: '^'
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1334:11: '^'
                     {
                     match('^'); 
 
@@ -492,7 +514,7 @@ public class InternalSassLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1206:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1334:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop6:
             do {
                 int alt6=2;
@@ -541,10 +563,10 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -562,10 +584,10 @@ public class InternalSassLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -581,7 +603,7 @@ public class InternalSassLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -597,7 +619,7 @@ public class InternalSassLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -622,10 +644,10 @@ public class InternalSassLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop8:
                     do {
                         int alt8=3;
@@ -641,7 +663,7 @@ public class InternalSassLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -657,7 +679,7 @@ public class InternalSassLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1208:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1336:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -700,12 +722,12 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1210:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1210:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1338:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1338:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1210:24: ( options {greedy=false; } : . )*
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1338:24: ( options {greedy=false; } : . )*
             loop10:
             do {
                 int alt10=2;
@@ -730,7 +752,7 @@ public class InternalSassLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1210:52: .
+            	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1338:52: .
             	    {
             	    matchAny(); 
 
@@ -760,12 +782,12 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1212:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1212:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1340:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1340:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1212:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1340:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -778,7 +800,7 @@ public class InternalSassLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1212:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1340:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -798,7 +820,7 @@ public class InternalSassLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1212:40: ( ( '\\r' )? '\\n' )?
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1340:40: ( ( '\\r' )? '\\n' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -807,9 +829,9 @@ public class InternalSassLexer extends Lexer {
             }
             switch (alt13) {
                 case 1 :
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1212:41: ( '\\r' )? '\\n'
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1340:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1212:41: ( '\\r' )?
+                    // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1340:41: ( '\\r' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -818,7 +840,7 @@ public class InternalSassLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1212:41: '\\r'
+                            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1340:41: '\\r'
                             {
                             match('\r'); 
 
@@ -850,10 +872,10 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1214:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1214:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1342:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1342:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1214:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1342:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt14=0;
             loop14:
             do {
@@ -907,8 +929,8 @@ public class InternalSassLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1216:16: ( . )
-            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1216:18: .
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1344:16: ( . )
+            // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1344:18: .
             {
             matchAny(); 
 
@@ -923,8 +945,8 @@ public class InternalSassLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:8: ( RULE_DOT | RULE_COMMA | RULE_SHARP | RULE_COLON | RULE_SEMI_COLON | RULE_BRACE_LEFT | RULE_BRACE_RIGHT | RULE_DOLLAR | RULE_AMP | RULE_CHARSET_ID | RULE_WORD | RULE_VARIABLE | RULE_SELECTOR | RULE_INT | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt15=20;
+        // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:8: ( RULE_DOT | RULE_COMMA | RULE_SHARP | RULE_COLON | RULE_SEMI_COLON | RULE_BRACE_LEFT | RULE_BRACE_RIGHT | RULE_DOLLAR | RULE_AMP | RULE_CHARSET_ID | RULE_INCLUDE_ID | RULE_WORD | RULE_VARIABLE | RULE_SELECTOR | RULE_INT | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt15=21;
         alt15 = dfa15.predict(input);
         switch (alt15) {
             case 1 :
@@ -998,70 +1020,77 @@ public class InternalSassLexer extends Lexer {
                 }
                 break;
             case 11 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:138: RULE_WORD
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:138: RULE_INCLUDE_ID
+                {
+                mRULE_INCLUDE_ID(); 
+
+                }
+                break;
+            case 12 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:154: RULE_WORD
                 {
                 mRULE_WORD(); 
 
                 }
                 break;
-            case 12 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:148: RULE_VARIABLE
+            case 13 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:164: RULE_VARIABLE
                 {
                 mRULE_VARIABLE(); 
 
                 }
                 break;
-            case 13 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:162: RULE_SELECTOR
+            case 14 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:178: RULE_SELECTOR
                 {
                 mRULE_SELECTOR(); 
 
                 }
                 break;
-            case 14 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:176: RULE_INT
+            case 15 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:192: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 15 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:185: RULE_ID
+            case 16 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:201: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 16 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:193: RULE_STRING
+            case 17 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:209: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 17 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:205: RULE_ML_COMMENT
+            case 18 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:221: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 18 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:221: RULE_SL_COMMENT
+            case 19 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:237: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 19 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:237: RULE_WS
+            case 20 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:253: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 20 :
-                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:245: RULE_ANY_OTHER
+            case 21 :
+                // ../com.dubture.editor.sass.ui/src-gen/com/dubture/editor/sass/ui/contentassist/antlr/internal/InternalSass.g:1:261: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1075,26 +1104,29 @@ public class InternalSassLexer extends Lexer {
 
     protected DFA15 dfa15 = new DFA15(this);
     static final String DFA15_eotS =
-        "\1\uffff\1\25\1\uffff\1\30\4\uffff\1\35\1\37\1\24\2\42\1\24\1\42"+
-        "\1\uffff\3\24\16\uffff\1\42\1\uffff\2\42\5\uffff\2\42\1\uffff";
+        "\1\uffff\1\25\1\uffff\1\30\4\uffff\1\35\1\37\1\24\2\43\1\24\1\43"+
+        "\1\uffff\3\24\17\uffff\1\43\1\uffff\1\43\1\uffff\1\43\4\uffff\1"+
+        "\43\1\uffff";
     static final String DFA15_eofS =
         "\55\uffff";
     static final String DFA15_minS =
         "\1\0\1\45\1\uffff\1\45\4\uffff\1\45\1\72\1\143\2\43\1\101\1\43\1"+
-        "\uffff\2\0\1\52\16\uffff\1\43\1\uffff\2\43\5\uffff\1\43\1\40\1\uffff";
+        "\uffff\2\0\1\52\17\uffff\1\43\1\uffff\1\43\1\uffff\1\43\4\uffff"+
+        "\1\40\1\uffff";
     static final String DFA15_maxS =
-        "\1\uffff\1\172\1\uffff\1\172\4\uffff\1\172\1\72\1\143\4\172\1\uffff"+
-        "\2\uffff\1\57\16\uffff\1\172\1\uffff\2\172\5\uffff\2\172\1\uffff";
+        "\1\uffff\1\172\1\uffff\1\172\4\uffff\1\172\1\72\1\151\4\172\1\uffff"+
+        "\2\uffff\1\57\17\uffff\1\172\1\uffff\1\172\1\uffff\1\172\4\uffff"+
+        "\1\172\1\uffff";
     static final String DFA15_acceptS =
-        "\2\uffff\1\2\1\uffff\1\4\1\5\1\6\1\7\7\uffff\1\17\3\uffff\1\23\1"+
-        "\24\1\1\1\15\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\14\1\11\1\12\1\uffff"+
-        "\1\13\2\uffff\1\17\1\20\1\21\1\22\1\23\2\uffff\1\16";
+        "\2\uffff\1\2\1\uffff\1\4\1\5\1\6\1\7\7\uffff\1\20\3\uffff\1\24\1"+
+        "\25\1\1\1\16\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\15\1\11\1\12\1\13\1"+
+        "\uffff\1\14\1\uffff\1\20\1\uffff\1\21\1\22\1\23\1\24\1\uffff\1\17";
     static final String DFA15_specialS =
-        "\1\2\17\uffff\1\1\1\0\33\uffff}>";
+        "\1\0\17\uffff\1\2\1\1\33\uffff}>";
     static final String[] DFA15_transitionS = {
             "\11\24\2\23\2\24\1\23\22\24\1\23\1\24\1\20\1\3\1\10\1\16\1\11"+
-            "\1\21\4\24\1\2\1\16\1\1\1\22\12\16\1\4\1\5\4\24\1\12\32\14\3"+
-            "\24\1\15\1\17\1\24\23\14\1\13\6\14\1\6\1\24\1\7\uff82\24",
+            "\1\21\4\24\1\2\1\16\1\1\1\22\12\16\1\4\1\5\4\24\1\12\10\14\1"+
+            "\13\21\14\3\24\1\15\1\17\1\24\32\14\1\6\1\24\1\7\uff82\24",
             "\1\26\7\uffff\1\26\2\uffff\12\26\7\uffff\32\26\6\uffff\32\26",
             "",
             "\1\26\7\uffff\1\26\2\uffff\12\26\7\uffff\32\26\6\uffff\32\26",
@@ -1104,20 +1136,18 @@ public class InternalSassLexer extends Lexer {
             "",
             "\1\36\7\uffff\1\36\2\uffff\12\36\7\uffff\32\36\6\uffff\32\36",
             "\1\26",
-            "\1\40",
-            "\1\26\1\uffff\1\44\7\uffff\1\44\1\26\1\uffff\12\43\7\uffff"+
-            "\32\43\4\uffff\1\45\1\uffff\7\43\1\41\22\43",
-            "\1\26\1\uffff\1\44\7\uffff\1\44\1\26\1\uffff\12\43\7\uffff"+
-            "\32\43\4\uffff\1\45\1\uffff\32\43",
+            "\1\40\5\uffff\1\41",
+            "\1\26\1\uffff\1\46\7\uffff\1\46\1\26\1\uffff\12\44\7\uffff"+
+            "\15\44\1\42\14\44\4\uffff\1\45\1\uffff\32\44",
+            "\1\26\1\uffff\1\46\7\uffff\1\46\1\26\1\uffff\12\44\7\uffff"+
+            "\32\44\4\uffff\1\45\1\uffff\32\44",
             "\32\45\4\uffff\1\45\1\uffff\32\45",
-            "\1\26\1\uffff\1\44\7\uffff\1\44\1\26\1\uffff\12\44\7\uffff"+
-            "\32\44\6\uffff\32\44",
+            "\1\26\1\uffff\1\46\7\uffff\1\46\1\26\1\uffff\12\46\7\uffff"+
+            "\32\46\6\uffff\32\46",
             "",
-            "\0\46",
-            "\0\46",
-            "\1\47\4\uffff\1\50",
-            "",
-            "",
+            "\0\47",
+            "\0\47",
+            "\1\50\4\uffff\1\51",
             "",
             "",
             "",
@@ -1130,22 +1160,23 @@ public class InternalSassLexer extends Lexer {
             "",
             "",
             "",
-            "\1\26\1\uffff\1\44\7\uffff\1\44\1\26\1\uffff\12\43\7\uffff"+
-            "\32\43\4\uffff\1\45\1\uffff\10\43\1\52\21\43",
-            "",
-            "\1\26\1\uffff\1\44\7\uffff\1\44\1\26\1\uffff\12\43\7\uffff"+
-            "\32\43\4\uffff\1\45\1\uffff\32\43",
-            "\1\26\1\uffff\1\44\7\uffff\1\44\1\26\1\uffff\12\44\7\uffff"+
-            "\32\44\6\uffff\32\44",
             "",
             "",
             "",
+            "\1\26\1\uffff\1\46\7\uffff\1\46\1\26\1\uffff\12\44\7\uffff"+
+            "\23\44\1\53\6\44\4\uffff\1\45\1\uffff\32\44",
+            "",
+            "\1\26\1\uffff\1\46\7\uffff\1\46\1\26\1\uffff\12\44\7\uffff"+
+            "\32\44\4\uffff\1\45\1\uffff\32\44",
+            "",
+            "\1\26\1\uffff\1\46\7\uffff\1\46\1\26\1\uffff\12\46\7\uffff"+
+            "\32\46\6\uffff\32\46",
             "",
             "",
-            "\1\26\1\uffff\1\44\7\uffff\1\44\1\26\1\uffff\12\43\7\uffff"+
-            "\32\43\4\uffff\1\45\1\uffff\22\43\1\53\7\43",
-            "\1\54\2\uffff\1\26\1\uffff\1\44\7\uffff\1\44\1\26\1\uffff\12"+
-            "\43\7\uffff\32\43\4\uffff\1\45\1\uffff\32\43",
+            "",
+            "",
+            "\1\54\2\uffff\1\26\1\uffff\1\46\7\uffff\1\46\1\26\1\uffff\12"+
+            "\44\7\uffff\32\44\4\uffff\1\45\1\uffff\32\44",
             ""
     };
 
@@ -1179,33 +1210,13 @@ public class InternalSassLexer extends Lexer {
             this.transition = DFA15_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( RULE_DOT | RULE_COMMA | RULE_SHARP | RULE_COLON | RULE_SEMI_COLON | RULE_BRACE_LEFT | RULE_BRACE_RIGHT | RULE_DOLLAR | RULE_AMP | RULE_CHARSET_ID | RULE_WORD | RULE_VARIABLE | RULE_SELECTOR | RULE_INT | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( RULE_DOT | RULE_COMMA | RULE_SHARP | RULE_COLON | RULE_SEMI_COLON | RULE_BRACE_LEFT | RULE_BRACE_RIGHT | RULE_DOLLAR | RULE_AMP | RULE_CHARSET_ID | RULE_INCLUDE_ID | RULE_WORD | RULE_VARIABLE | RULE_SELECTOR | RULE_INT | RULE_ID | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA15_17 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA15_17>='\u0000' && LA15_17<='\uFFFF')) ) {s = 38;}
-
-                        else s = 20;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA15_16 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA15_16>='\u0000' && LA15_16<='\uFFFF')) ) {s = 38;}
-
-                        else s = 20;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA15_0 = input.LA(1);
 
                         s = -1;
@@ -1229,9 +1240,9 @@ public class InternalSassLexer extends Lexer {
 
                         else if ( (LA15_0=='@') ) {s = 10;}
 
-                        else if ( (LA15_0=='t') ) {s = 11;}
+                        else if ( (LA15_0=='I') ) {s = 11;}
 
-                        else if ( ((LA15_0>='A' && LA15_0<='Z')||(LA15_0>='a' && LA15_0<='s')||(LA15_0>='u' && LA15_0<='z')) ) {s = 12;}
+                        else if ( ((LA15_0>='A' && LA15_0<='H')||(LA15_0>='J' && LA15_0<='Z')||(LA15_0>='a' && LA15_0<='z')) ) {s = 12;}
 
                         else if ( (LA15_0=='^') ) {s = 13;}
 
@@ -1248,6 +1259,26 @@ public class InternalSassLexer extends Lexer {
                         else if ( ((LA15_0>='\t' && LA15_0<='\n')||LA15_0=='\r'||LA15_0==' ') ) {s = 19;}
 
                         else if ( ((LA15_0>='\u0000' && LA15_0<='\b')||(LA15_0>='\u000B' && LA15_0<='\f')||(LA15_0>='\u000E' && LA15_0<='\u001F')||LA15_0=='!'||(LA15_0>='(' && LA15_0<='+')||(LA15_0>='<' && LA15_0<='?')||(LA15_0>='[' && LA15_0<=']')||LA15_0=='`'||LA15_0=='|'||(LA15_0>='~' && LA15_0<='\uFFFF')) ) {s = 20;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA15_17 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA15_17>='\u0000' && LA15_17<='\uFFFF')) ) {s = 39;}
+
+                        else s = 20;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA15_16 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA15_16>='\u0000' && LA15_16<='\uFFFF')) ) {s = 39;}
+
+                        else s = 20;
 
                         if ( s>=0 ) return s;
                         break;

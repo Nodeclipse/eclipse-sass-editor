@@ -12,6 +12,10 @@ Charset:
 	CHARSET_ID STRING SEMI_COLON
 ;
 
+Include:
+	INCLUDE_ID WORD SEMI_COLON
+;
+
 VariableDeclaration:
 	VARIABLE COLON WORD SEMI_COLON
 ;
@@ -25,8 +29,9 @@ RuleHead:
 ;
 
 RuleBody:
-	(PropertyDeclaration | Rule )*
+	(PropertyDeclaration | Include | Rule )*
 ;
+
 
 PropertyDeclaration:
 	WORD COLON
@@ -47,7 +52,7 @@ terminal BRACE_RIGHT     : '}';
 terminal DOLLAR          : '$';
 terminal AMP             : '&';
 terminal CHARSET_ID      : '@charset ';
-
+terminal INCLUDE_ID         : '@include';
 
 terminal WORD            : ('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'%')+ ;
 terminal VARIABLE        : DOLLAR WORD;

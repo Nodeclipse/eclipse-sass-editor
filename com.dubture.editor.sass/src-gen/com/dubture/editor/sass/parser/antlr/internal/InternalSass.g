@@ -166,6 +166,48 @@ ruleCharset returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
 
 
 
+// Entry rule entryRuleInclude
+entryRuleInclude returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getIncludeRule()); } 
+	 iv_ruleInclude=ruleInclude 
+	 { $current=$iv_ruleInclude.current.getText(); }  
+	 EOF 
+;
+
+// Rule Include
+ruleInclude returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_INCLUDE_ID_0=RULE_INCLUDE_ID    {
+		$current.merge(this_INCLUDE_ID_0);
+    }
+
+    { 
+    newLeafNode(this_INCLUDE_ID_0, grammarAccess.getIncludeAccess().getINCLUDE_IDTerminalRuleCall_0()); 
+    }
+    this_WORD_1=RULE_WORD    {
+		$current.merge(this_WORD_1);
+    }
+
+    { 
+    newLeafNode(this_WORD_1, grammarAccess.getIncludeAccess().getWORDTerminalRuleCall_1()); 
+    }
+    this_SEMI_COLON_2=RULE_SEMI_COLON    {
+		$current.merge(this_SEMI_COLON_2);
+    }
+
+    { 
+    newLeafNode(this_SEMI_COLON_2, grammarAccess.getIncludeAccess().getSEMI_COLONTerminalRuleCall_2()); 
+    }
+)
+    ;
+
+
+
+
+
 // Entry rule entryRuleVariableDeclaration
 entryRuleVariableDeclaration returns [String current=null] 
 	:
@@ -342,10 +384,22 @@ ruleRuleBody returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
 
     |
     { 
-        newCompositeNode(grammarAccess.getRuleBodyAccess().getRuleParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getRuleBodyAccess().getIncludeParserRuleCall_1()); 
     }
-    this_Rule_1=ruleRule    {
-		$current.merge(this_Rule_1);
+    this_Include_1=ruleInclude    {
+		$current.merge(this_Include_1);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getRuleBodyAccess().getRuleParserRuleCall_2()); 
+    }
+    this_Rule_2=ruleRule    {
+		$current.merge(this_Rule_2);
     }
 
     { 
@@ -461,13 +515,15 @@ RULE_AMP : '&';
 
 RULE_CHARSET_ID : '@charset ';
 
+RULE_INCLUDE_ID : '@include';
+
 RULE_WORD : ('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'%')+;
 
 RULE_VARIABLE : RULE_DOLLAR RULE_WORD;
 
 RULE_SELECTOR : (RULE_AMP RULE_COLON RULE_WORD|((RULE_SHARP|RULE_DOT)? RULE_WORD)+);
 
-RULE_INT : 'this one has been deactivated';
+RULE_INT : 'INT has been deactivated';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

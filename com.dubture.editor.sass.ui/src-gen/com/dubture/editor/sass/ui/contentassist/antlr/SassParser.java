@@ -42,6 +42,7 @@ public class SassParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPropertyDeclarationAccess().getAlternatives_2_0_0(), "rule__PropertyDeclaration__Alternatives_2_0_0");
 					put(grammarAccess.getSassAccess().getGroup(), "rule__Sass__Group__0");
 					put(grammarAccess.getCharsetAccess().getGroup(), "rule__Charset__Group__0");
+					put(grammarAccess.getIncludeAccess().getGroup(), "rule__Include__Group__0");
 					put(grammarAccess.getVariableDeclarationAccess().getGroup(), "rule__VariableDeclaration__Group__0");
 					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 					put(grammarAccess.getRuleHeadAccess().getGroup(), "rule__RuleHead__Group__0");
