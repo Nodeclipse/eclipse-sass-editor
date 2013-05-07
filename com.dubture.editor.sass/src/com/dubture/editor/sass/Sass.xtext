@@ -8,17 +8,8 @@ Sass:
 	{Sass} Charset? VariableDeclaration* statements+=Rule*
 ;
 
-Charset:
-	CHARSET_ID STRING SEMI_COLON
-;
-
-Include:
-	INCLUDE_ID WORD SEMI_COLON
-;
-
-
 VariableDeclaration:
-	VARIABLE COLON WORD SEMI_COLON
+	Variable COLON WORD SEMI_COLON
 ;
 
 Rule:
@@ -26,7 +17,7 @@ Rule:
 ;
 
 RuleHead:
-	SELECTOR ( COMMA SELECTOR )*
+	Selector ( COMMA Selector )*
 ;
 
 RuleBody:
@@ -37,16 +28,32 @@ RuleBody:
 PropertyDeclaration:
 	WORD COLON
 	(
-		(WORD | VARIABLE)+ SEMI_COLON
+		(WORD | Variable)+ SEMI_COLON
 	|
 		BRACE_LEFT (PropertyDeclaration)* BRACE_RIGHT
 	)
 ;
 
-Mixin : 
-	MIXIN_ID WORD (PAREN_LEFT VARIABLE PAREN_RIGHT)?
+Charset:
+	CHARSET_ID STRING SEMI_COLON
 ;
 
+Include:
+	INCLUDE_ID WORD SEMI_COLON
+;
+
+Mixin : 
+	MIXIN_ID WORD (PAREN_LEFT Variable PAREN_RIGHT)?
+;
+
+Selector :
+	AMP COLON WORD
+	| ((SHARP | DOT)? WORD)+
+;
+
+Variable :
+	DOLLAR WORD
+;
 
 terminal DOT             : '.';
 terminal COMMA           : ',';
@@ -64,11 +71,7 @@ terminal INCLUDE_ID      : '@include ';
 terminal MIXIN_ID        : '@mixin ';
 
 terminal WORD            : ('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'%')+ ;
-terminal VARIABLE        : DOLLAR WORD;
-terminal SELECTOR        :
-						 AMP COLON WORD
-						 | ((SHARP | DOT)? WORD)+
-						 ;
+
 
 /*Deactivate INT to prevent warnings */
 terminal INT returns ecore::EInt:
