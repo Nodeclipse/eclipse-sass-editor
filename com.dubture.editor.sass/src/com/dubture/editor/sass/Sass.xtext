@@ -1,0 +1,57 @@
+grammar com.dubture.editor.sass.Sass with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate sass "http://www.dubture.com/editor/sass/Sass"
+
+Sass:
+	{Sass} Charset? VariableDeclaration* statements+=Rule*
+;
+
+Charset:
+	CHARSET_ID STRING SEMI_COLON
+;
+
+VariableDeclaration:
+	VARIABLE COLON WORD SEMI_COLON
+;
+
+Rule:
+	RuleHead BRACE_LEFT RuleBody BRACE_RIGHT	
+;
+
+RuleHead:
+	SELECTOR (COMMA SELECTOR)*
+;
+
+RuleBody:
+	(PropertyDeclaration | Rule )*
+;
+
+PropertyDeclaration:
+	WORD COLON
+	(
+		(WORD | VARIABLE)+ SEMI_COLON
+	|
+		BRACE_LEFT (PropertyDeclaration)* BRACE_RIGHT
+	)
+;
+
+terminal DOT             : '.';
+terminal COMMA           : ',';
+terminal SHARP           : '#';
+terminal COLON    	     : ':';
+terminal SEMI_COLON      : ';';
+terminal BRACE_LEFT      : '{';
+terminal BRACE_RIGHT     : '}';
+terminal DOLLAR          : '$';
+terminal AMP             : '&';
+terminal CHARSET_ID      : '@charset ';
+
+
+terminal WORD            : ('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'%')+ ;
+terminal VARIABLE        : DOLLAR WORD;
+terminal SELECTOR        :
+						 AMP COLON WORD
+						 | ((SHARP | DOT)? WORD)+
+						 ;
