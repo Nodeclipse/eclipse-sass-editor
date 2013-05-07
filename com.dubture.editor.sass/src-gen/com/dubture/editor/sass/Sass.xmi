@@ -29,9 +29,9 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
         <elements xsi:type="xtext:RuleCall" rule="/1/@rules.2"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Include">
@@ -39,9 +39,9 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="VariableDeclaration">
@@ -49,10 +49,10 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="Rule">
@@ -60,10 +60,13 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
+        </elements>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.6"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="RuleHead">
@@ -71,10 +74,10 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
         <elements xsi:type="xtext:Group" cardinality="*">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
         </elements>
       </alternatives>
     </rules>
@@ -93,21 +96,35 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Group">
             <elements xsi:type="xtext:Alternatives" cardinality="+">
-              <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
-              <elements xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
+              <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
+              <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
             </elements>
-            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
           </elements>
           <elements xsi:type="xtext:Group">
-            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
             <elements xsi:type="xtext:RuleCall" cardinality="*" rule="/0/@rules.7"/>
-            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
+            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
           </elements>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="Mixin">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
         </elements>
       </alternatives>
     </rules>
@@ -140,6 +157,18 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Keyword" value=";"/>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="PAREN_LEFT">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Keyword" value="("/>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="PAREN_RIGHT">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Keyword" value=")"/>
     </rules>
     <rules xsi:type="xtext:TerminalRule" name="BRACE_LEFT">
       <type metamodel="/0/@metamodelDeclarations.0">
@@ -175,7 +204,13 @@
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
-      <alternatives xsi:type="xtext:Keyword" value="@include"/>
+      <alternatives xsi:type="xtext:Keyword" value="@include "/>
+    </rules>
+    <rules xsi:type="xtext:TerminalRule" name="MIXIN_ID">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </type>
+      <alternatives xsi:type="xtext:Keyword" value="@mixin "/>
     </rules>
     <rules xsi:type="xtext:TerminalRule" name="WORD">
       <type metamodel="/0/@metamodelDeclarations.0">
@@ -203,8 +238,8 @@
         <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:TerminalRule" name="SELECTOR">
@@ -213,16 +248,16 @@
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
           <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="+">
           <elements xsi:type="xtext:Alternatives" cardinality="?">
-            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
-            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
+            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
+            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
           </elements>
-          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+          <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
         </elements>
       </alternatives>
     </rules>

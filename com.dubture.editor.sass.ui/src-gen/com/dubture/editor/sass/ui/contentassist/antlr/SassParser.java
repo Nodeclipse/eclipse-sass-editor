@@ -37,6 +37,7 @@ public class SassParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getRuleAccess().getAlternatives_0(), "rule__Rule__Alternatives_0");
 					put(grammarAccess.getRuleBodyAccess().getAlternatives(), "rule__RuleBody__Alternatives");
 					put(grammarAccess.getPropertyDeclarationAccess().getAlternatives_2(), "rule__PropertyDeclaration__Alternatives_2");
 					put(grammarAccess.getPropertyDeclarationAccess().getAlternatives_2_0_0(), "rule__PropertyDeclaration__Alternatives_2_0_0");
@@ -50,6 +51,8 @@ public class SassParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPropertyDeclarationAccess().getGroup(), "rule__PropertyDeclaration__Group__0");
 					put(grammarAccess.getPropertyDeclarationAccess().getGroup_2_0(), "rule__PropertyDeclaration__Group_2_0__0");
 					put(grammarAccess.getPropertyDeclarationAccess().getGroup_2_1(), "rule__PropertyDeclaration__Group_2_1__0");
+					put(grammarAccess.getMixinAccess().getGroup(), "rule__Mixin__Group__0");
+					put(grammarAccess.getMixinAccess().getGroup_2(), "rule__Mixin__Group_2__0");
 					put(grammarAccess.getSassAccess().getStatementsAssignment_3(), "rule__Sass__StatementsAssignment_3");
 				}
 			};

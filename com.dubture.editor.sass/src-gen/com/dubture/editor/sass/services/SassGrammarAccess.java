@@ -129,20 +129,28 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	public class RuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Rule");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cRuleHeadParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final RuleCall cRuleHeadParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cMixinParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
 		private final RuleCall cBRACE_LEFTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final RuleCall cRuleBodyParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final RuleCall cBRACE_RIGHTTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//Rule:
-		//	RuleHead BRACE_LEFT RuleBody BRACE_RIGHT;
+		//	(RuleHead | Mixin) BRACE_LEFT RuleBody BRACE_RIGHT;
 		public ParserRule getRule() { return rule; }
 
-		//RuleHead BRACE_LEFT RuleBody BRACE_RIGHT
+		//(RuleHead | Mixin) BRACE_LEFT RuleBody BRACE_RIGHT
 		public Group getGroup() { return cGroup; }
 
+		//RuleHead | Mixin
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
 		//RuleHead
-		public RuleCall getRuleHeadParserRuleCall_0() { return cRuleHeadParserRuleCall_0; }
+		public RuleCall getRuleHeadParserRuleCall_0_0() { return cRuleHeadParserRuleCall_0_0; }
+
+		//Mixin
+		public RuleCall getMixinParserRuleCall_0_1() { return cMixinParserRuleCall_0_1; }
 
 		//BRACE_LEFT
 		public RuleCall getBRACE_LEFTTerminalRuleCall_1() { return cBRACE_LEFTTerminalRuleCall_1; }
@@ -265,6 +273,42 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 		//BRACE_RIGHT
 		public RuleCall getBRACE_RIGHTTerminalRuleCall_2_1_2() { return cBRACE_RIGHTTerminalRuleCall_2_1_2; }
 	}
+
+	public class MixinElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Mixin");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cMIXIN_IDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cWORDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final RuleCall cPAREN_LEFTTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
+		private final RuleCall cVARIABLETerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final RuleCall cPAREN_RIGHTTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		
+		//Mixin:
+		//	MIXIN_ID WORD (PAREN_LEFT VARIABLE PAREN_RIGHT)?;
+		public ParserRule getRule() { return rule; }
+
+		//MIXIN_ID WORD (PAREN_LEFT VARIABLE PAREN_RIGHT)?
+		public Group getGroup() { return cGroup; }
+
+		//MIXIN_ID
+		public RuleCall getMIXIN_IDTerminalRuleCall_0() { return cMIXIN_IDTerminalRuleCall_0; }
+
+		//WORD
+		public RuleCall getWORDTerminalRuleCall_1() { return cWORDTerminalRuleCall_1; }
+
+		//(PAREN_LEFT VARIABLE PAREN_RIGHT)?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//PAREN_LEFT
+		public RuleCall getPAREN_LEFTTerminalRuleCall_2_0() { return cPAREN_LEFTTerminalRuleCall_2_0; }
+
+		//VARIABLE
+		public RuleCall getVARIABLETerminalRuleCall_2_1() { return cVARIABLETerminalRuleCall_2_1; }
+
+		//PAREN_RIGHT
+		public RuleCall getPAREN_RIGHTTerminalRuleCall_2_2() { return cPAREN_RIGHTTerminalRuleCall_2_2; }
+	}
 	
 	
 	private SassElements pSass;
@@ -275,17 +319,21 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	private RuleHeadElements pRuleHead;
 	private RuleBodyElements pRuleBody;
 	private PropertyDeclarationElements pPropertyDeclaration;
+	private MixinElements pMixin;
 	private TerminalRule tDOT;
 	private TerminalRule tCOMMA;
 	private TerminalRule tSHARP;
 	private TerminalRule tCOLON;
 	private TerminalRule tSEMI_COLON;
+	private TerminalRule tPAREN_LEFT;
+	private TerminalRule tPAREN_RIGHT;
 	private TerminalRule tBRACE_LEFT;
 	private TerminalRule tBRACE_RIGHT;
 	private TerminalRule tDOLLAR;
 	private TerminalRule tAMP;
 	private TerminalRule tCHARSET_ID;
 	private TerminalRule tINCLUDE_ID;
+	private TerminalRule tMIXIN_ID;
 	private TerminalRule tWORD;
 	private TerminalRule tVARIABLE;
 	private TerminalRule tSELECTOR;
@@ -370,7 +418,7 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Rule:
-	//	RuleHead BRACE_LEFT RuleBody BRACE_RIGHT;
+	//	(RuleHead | Mixin) BRACE_LEFT RuleBody BRACE_RIGHT;
 	public RuleElements getRuleAccess() {
 		return (pRule != null) ? pRule : (pRule = new RuleElements());
 	}
@@ -409,6 +457,16 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 		return getPropertyDeclarationAccess().getRule();
 	}
 
+	//Mixin:
+	//	MIXIN_ID WORD (PAREN_LEFT VARIABLE PAREN_RIGHT)?;
+	public MixinElements getMixinAccess() {
+		return (pMixin != null) ? pMixin : (pMixin = new MixinElements());
+	}
+	
+	public ParserRule getMixinRule() {
+		return getMixinAccess().getRule();
+	}
+
 	//terminal DOT:
 	//	".";
 	public TerminalRule getDOTRule() {
@@ -437,6 +495,18 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	//	";";
 	public TerminalRule getSEMI_COLONRule() {
 		return (tSEMI_COLON != null) ? tSEMI_COLON : (tSEMI_COLON = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SEMI_COLON"));
+	} 
+
+	//terminal PAREN_LEFT:
+	//	"(";
+	public TerminalRule getPAREN_LEFTRule() {
+		return (tPAREN_LEFT != null) ? tPAREN_LEFT : (tPAREN_LEFT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PAREN_LEFT"));
+	} 
+
+	//terminal PAREN_RIGHT:
+	//	")";
+	public TerminalRule getPAREN_RIGHTRule() {
+		return (tPAREN_RIGHT != null) ? tPAREN_RIGHT : (tPAREN_RIGHT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PAREN_RIGHT"));
 	} 
 
 	//terminal BRACE_LEFT:
@@ -470,9 +540,15 @@ public class SassGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal INCLUDE_ID:
-	//	"@include";
+	//	"@include ";
 	public TerminalRule getINCLUDE_IDRule() {
 		return (tINCLUDE_ID != null) ? tINCLUDE_ID : (tINCLUDE_ID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INCLUDE_ID"));
+	} 
+
+	//terminal MIXIN_ID:
+	//	"@mixin ";
+	public TerminalRule getMIXIN_IDRule() {
+		return (tMIXIN_ID != null) ? tMIXIN_ID : (tMIXIN_ID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "MIXIN_ID"));
 	} 
 
 	//terminal WORD:

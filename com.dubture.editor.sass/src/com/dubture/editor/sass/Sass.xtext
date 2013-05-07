@@ -16,16 +16,17 @@ Include:
 	INCLUDE_ID WORD SEMI_COLON
 ;
 
+
 VariableDeclaration:
 	VARIABLE COLON WORD SEMI_COLON
 ;
 
 Rule:
-	RuleHead BRACE_LEFT RuleBody BRACE_RIGHT	
+	(RuleHead|Mixin) BRACE_LEFT RuleBody BRACE_RIGHT
 ;
 
 RuleHead:
-	SELECTOR (COMMA SELECTOR)*
+	SELECTOR ( COMMA SELECTOR )*
 ;
 
 RuleBody:
@@ -42,17 +43,25 @@ PropertyDeclaration:
 	)
 ;
 
+Mixin : 
+	MIXIN_ID WORD (PAREN_LEFT VARIABLE PAREN_RIGHT)?
+;
+
+
 terminal DOT             : '.';
 terminal COMMA           : ',';
 terminal SHARP           : '#';
 terminal COLON    	     : ':';
 terminal SEMI_COLON      : ';';
+terminal PAREN_LEFT      : '(';
+terminal PAREN_RIGHT     : ')';
 terminal BRACE_LEFT      : '{';
 terminal BRACE_RIGHT     : '}';
 terminal DOLLAR          : '$';
 terminal AMP             : '&';
 terminal CHARSET_ID      : '@charset ';
-terminal INCLUDE_ID         : '@include';
+terminal INCLUDE_ID      : '@include ';
+terminal MIXIN_ID        : '@mixin ';
 
 terminal WORD            : ('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'%')+ ;
 terminal VARIABLE        : DOLLAR WORD;
