@@ -10,4 +10,4 @@ Eclipse plugin to work with [Sass](http://sass-lang.com/) and [Compass](http://c
 
 The plugin is not ready for production yet, still work in progress.
 
-Watch this repo or my [Twitter](https://github.com/twitter) account to be notified when it's ready for use.
+Watch this repo or my [Twitter](http://twitter.com/pulse00) account to be notified when it's ready for use.
