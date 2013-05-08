@@ -152,12 +152,16 @@ ruleVariableDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatyp
     { 
     newLeafNode(this_COLON_1, grammarAccess.getVariableDeclarationAccess().getCOLONTerminalRuleCall_1()); 
     }
-    this_WORD_2=RULE_WORD    {
-		$current.merge(this_WORD_2);
+
+    { 
+        newCompositeNode(grammarAccess.getVariableDeclarationAccess().getPropertyParserRuleCall_2()); 
+    }
+    this_Property_2=ruleProperty    {
+		$current.merge(this_Property_2);
     }
 
     { 
-    newLeafNode(this_WORD_2, grammarAccess.getVariableDeclarationAccess().getWORDTerminalRuleCall_2()); 
+        afterParserOrEnumRuleCall();
     }
     this_SEMI_COLON_3=RULE_SEMI_COLON    {
 		$current.merge(this_SEMI_COLON_3);
@@ -368,35 +372,45 @@ rulePropertyDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatyp
     { 
     newLeafNode(this_COLON_1, grammarAccess.getPropertyDeclarationAccess().getCOLONTerminalRuleCall_1()); 
     }
-(((    this_WORD_2=RULE_WORD    {
-		$current.merge(this_WORD_2);
+(((
+    { 
+        newCompositeNode(grammarAccess.getPropertyDeclarationAccess().getPropertyParserRuleCall_2_0_0()); 
+    }
+    this_Property_2=ruleProperty    {
+		$current.merge(this_Property_2);
     }
 
     { 
-    newLeafNode(this_WORD_2, grammarAccess.getPropertyDeclarationAccess().getWORDTerminalRuleCall_2_0_0_0()); 
+        afterParserOrEnumRuleCall();
     }
-
-    |    this_VARIABLE_3=RULE_VARIABLE    {
-		$current.merge(this_VARIABLE_3);
+)+(
+    { 
+        newCompositeNode(grammarAccess.getPropertyDeclarationAccess().getOperatorParserRuleCall_2_0_1_0()); 
+    }
+    this_Operator_3=ruleOperator    {
+		$current.merge(this_Operator_3);
     }
 
     { 
-    newLeafNode(this_VARIABLE_3, grammarAccess.getPropertyDeclarationAccess().getVARIABLETerminalRuleCall_2_0_0_1()); 
+        afterParserOrEnumRuleCall();
     }
-
-    |    this_HEX_COLOR_4=RULE_HEX_COLOR    {
-		$current.merge(this_HEX_COLOR_4);
+(
+    { 
+        newCompositeNode(grammarAccess.getPropertyDeclarationAccess().getPropertyParserRuleCall_2_0_1_1()); 
+    }
+    this_Property_4=ruleProperty    {
+		$current.merge(this_Property_4);
     }
 
     { 
-    newLeafNode(this_HEX_COLOR_4, grammarAccess.getPropertyDeclarationAccess().getHEX_COLORTerminalRuleCall_2_0_0_2()); 
+        afterParserOrEnumRuleCall();
     }
-)+    this_SEMI_COLON_5=RULE_SEMI_COLON    {
+)+)?    this_SEMI_COLON_5=RULE_SEMI_COLON    {
 		$current.merge(this_SEMI_COLON_5);
     }
 
     { 
-    newLeafNode(this_SEMI_COLON_5, grammarAccess.getPropertyDeclarationAccess().getSEMI_COLONTerminalRuleCall_2_0_1()); 
+    newLeafNode(this_SEMI_COLON_5, grammarAccess.getPropertyDeclarationAccess().getSEMI_COLONTerminalRuleCall_2_0_2()); 
     }
 )
     |(    this_BRACE_LEFT_6=RULE_BRACE_LEFT    {
@@ -425,6 +439,193 @@ rulePropertyDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatyp
     newLeafNode(this_BRACE_RIGHT_8, grammarAccess.getPropertyDeclarationAccess().getBRACE_RIGHTTerminalRuleCall_2_1_2()); 
     }
 )))
+    ;
+
+
+
+
+
+// Entry rule entryRuleFunction
+entryRuleFunction returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFunctionRule()); } 
+	 iv_ruleFunction=ruleFunction 
+	 { $current=$iv_ruleFunction.current.getText(); }  
+	 EOF 
+;
+
+// Rule Function
+ruleFunction returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_WORD_0=RULE_WORD    {
+		$current.merge(this_WORD_0);
+    }
+
+    { 
+    newLeafNode(this_WORD_0, grammarAccess.getFunctionAccess().getWORDTerminalRuleCall_0()); 
+    }
+    this_PAREN_LEFT_1=RULE_PAREN_LEFT    {
+		$current.merge(this_PAREN_LEFT_1);
+    }
+
+    { 
+    newLeafNode(this_PAREN_LEFT_1, grammarAccess.getFunctionAccess().getPAREN_LEFTTerminalRuleCall_1()); 
+    }
+
+    { 
+        newCompositeNode(grammarAccess.getFunctionAccess().getPropertyParserRuleCall_2()); 
+    }
+    this_Property_2=ruleProperty    {
+		$current.merge(this_Property_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+(    this_COMMA_3=RULE_COMMA    {
+		$current.merge(this_COMMA_3);
+    }
+
+    { 
+    newLeafNode(this_COMMA_3, grammarAccess.getFunctionAccess().getCOMMATerminalRuleCall_3_0()); 
+    }
+
+    { 
+        newCompositeNode(grammarAccess.getFunctionAccess().getPropertyParserRuleCall_3_1()); 
+    }
+    this_Property_4=ruleProperty    {
+		$current.merge(this_Property_4);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)*    this_PAREN_RIGHT_5=RULE_PAREN_RIGHT    {
+		$current.merge(this_PAREN_RIGHT_5);
+    }
+
+    { 
+    newLeafNode(this_PAREN_RIGHT_5, grammarAccess.getFunctionAccess().getPAREN_RIGHTTerminalRuleCall_4()); 
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRuleProperty
+entryRuleProperty returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPropertyRule()); } 
+	 iv_ruleProperty=ruleProperty 
+	 { $current=$iv_ruleProperty.current.getText(); }  
+	 EOF 
+;
+
+// Rule Property
+ruleProperty returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_WORD_0=RULE_WORD    {
+		$current.merge(this_WORD_0);
+    }
+
+    { 
+    newLeafNode(this_WORD_0, grammarAccess.getPropertyAccess().getWORDTerminalRuleCall_0()); 
+    }
+
+    |    this_HEX_DIGIT_1=RULE_HEX_DIGIT    {
+		$current.merge(this_HEX_DIGIT_1);
+    }
+
+    { 
+    newLeafNode(this_HEX_DIGIT_1, grammarAccess.getPropertyAccess().getHEX_DIGITTerminalRuleCall_1()); 
+    }
+
+    |    this_HEX_COLOR_2=RULE_HEX_COLOR    {
+		$current.merge(this_HEX_COLOR_2);
+    }
+
+    { 
+    newLeafNode(this_HEX_COLOR_2, grammarAccess.getPropertyAccess().getHEX_COLORTerminalRuleCall_2()); 
+    }
+
+    |    this_VARIABLE_3=RULE_VARIABLE    {
+		$current.merge(this_VARIABLE_3);
+    }
+
+    { 
+    newLeafNode(this_VARIABLE_3, grammarAccess.getPropertyAccess().getVARIABLETerminalRuleCall_3()); 
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getPropertyAccess().getFunctionParserRuleCall_4()); 
+    }
+    this_Function_4=ruleFunction    {
+		$current.merge(this_Function_4);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRuleOperator
+entryRuleOperator returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getOperatorRule()); } 
+	 iv_ruleOperator=ruleOperator 
+	 { $current=$iv_ruleOperator.current.getText(); }  
+	 EOF 
+;
+
+// Rule Operator
+ruleOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_PLUS_0=RULE_PLUS    {
+		$current.merge(this_PLUS_0);
+    }
+
+    { 
+    newLeafNode(this_PLUS_0, grammarAccess.getOperatorAccess().getPLUSTerminalRuleCall_0()); 
+    }
+
+    |    this_MINUS_1=RULE_MINUS    {
+		$current.merge(this_MINUS_1);
+    }
+
+    { 
+    newLeafNode(this_MINUS_1, grammarAccess.getOperatorAccess().getMINUSTerminalRuleCall_1()); 
+    }
+
+    |    this_DIVIDE_2=RULE_DIVIDE    {
+		$current.merge(this_DIVIDE_2);
+    }
+
+    { 
+    newLeafNode(this_DIVIDE_2, grammarAccess.getOperatorAccess().getDIVIDETerminalRuleCall_2()); 
+    }
+
+    |    this_MULTIPLY_3=RULE_MULTIPLY    {
+		$current.merge(this_MULTIPLY_3);
+    }
+
+    { 
+    newLeafNode(this_MULTIPLY_3, grammarAccess.getOperatorAccess().getMULTIPLYTerminalRuleCall_3()); 
+    }
+)
     ;
 
 
@@ -501,12 +702,55 @@ ruleInclude returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
     { 
     newLeafNode(this_WORD_1, grammarAccess.getIncludeAccess().getWORDTerminalRuleCall_1()); 
     }
-    this_SEMI_COLON_2=RULE_SEMI_COLON    {
-		$current.merge(this_SEMI_COLON_2);
+(    this_PAREN_LEFT_2=RULE_PAREN_LEFT    {
+		$current.merge(this_PAREN_LEFT_2);
     }
 
     { 
-    newLeafNode(this_SEMI_COLON_2, grammarAccess.getIncludeAccess().getSEMI_COLONTerminalRuleCall_2()); 
+    newLeafNode(this_PAREN_LEFT_2, grammarAccess.getIncludeAccess().getPAREN_LEFTTerminalRuleCall_2_0()); 
+    }
+
+    { 
+        newCompositeNode(grammarAccess.getIncludeAccess().getPropertyParserRuleCall_2_1()); 
+    }
+    this_Property_3=ruleProperty    {
+		$current.merge(this_Property_3);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+(    this_COMMA_4=RULE_COMMA    {
+		$current.merge(this_COMMA_4);
+    }
+
+    { 
+    newLeafNode(this_COMMA_4, grammarAccess.getIncludeAccess().getCOMMATerminalRuleCall_2_2_0()); 
+    }
+
+    { 
+        newCompositeNode(grammarAccess.getIncludeAccess().getPropertyParserRuleCall_2_2_1()); 
+    }
+    this_Property_5=ruleProperty    {
+		$current.merge(this_Property_5);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)*    this_PAREN_RIGHT_6=RULE_PAREN_RIGHT    {
+		$current.merge(this_PAREN_RIGHT_6);
+    }
+
+    { 
+    newLeafNode(this_PAREN_RIGHT_6, grammarAccess.getIncludeAccess().getPAREN_RIGHTTerminalRuleCall_2_3()); 
+    }
+)?    this_SEMI_COLON_7=RULE_SEMI_COLON    {
+		$current.merge(this_SEMI_COLON_7);
+    }
+
+    { 
+    newLeafNode(this_SEMI_COLON_7, grammarAccess.getIncludeAccess().getSEMI_COLONTerminalRuleCall_3()); 
     }
 )
     ;
@@ -593,17 +837,27 @@ RULE_DOLLAR : '$';
 
 RULE_AMP : '&';
 
+RULE_PLUS : '+';
+
+RULE_MINUS : '-';
+
+RULE_DIVIDE : '/';
+
+RULE_MULTIPLY : '*';
+
 RULE_CHARSET_ID : '@charset ';
 
 RULE_INCLUDE_ID : '@include ';
 
 RULE_MIXIN_ID : '@mixin ';
 
+RULE_HEX_DIGIT : ('0'..'9'|'a'..'f'|'A'..'F');
+
+RULE_HEX_COLOR : RULE_HASH RULE_HEX_DIGIT+;
+
 RULE_WORD : ('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'%')+;
 
 RULE_VARIABLE : RULE_DOLLAR RULE_WORD;
-
-RULE_HEX_COLOR : RULE_HASH RULE_WORD;
 
 RULE_SELECTOR : (RULE_AMP RULE_COLON RULE_WORD|((RULE_HASH|RULE_DOT)? RULE_WORD)+);
 

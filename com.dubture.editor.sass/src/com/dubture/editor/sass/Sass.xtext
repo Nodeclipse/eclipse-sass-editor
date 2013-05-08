@@ -9,7 +9,7 @@ Sass:
 ;
 
 VariableDeclaration:
-	VARIABLE COLON WORD SEMI_COLON
+	VARIABLE COLON Property SEMI_COLON
 ;
 
 Rule:
@@ -24,14 +24,25 @@ RuleBody:
 	(PropertyDeclaration | Include | Rule )*
 ;
 
-
 PropertyDeclaration:
 	WORD COLON
 	(
-		(WORD | VARIABLE | HEX_COLOR)+ SEMI_COLON
+		Property+ (Operator Property+)? SEMI_COLON
 	|
 		BRACE_LEFT (PropertyDeclaration)* BRACE_RIGHT
 	)
+;
+
+Function:
+	WORD PAREN_LEFT Property (COMMA Property)* PAREN_RIGHT
+;
+
+Property:
+	WORD | HEX_DIGIT | HEX_COLOR | VARIABLE | Function
+;
+
+Operator:
+	PLUS | MINUS | DIVIDE | MULTIPLY
 ;
 
 Charset:
@@ -39,7 +50,7 @@ Charset:
 ;
 
 Include:
-	INCLUDE_ID WORD SEMI_COLON
+	INCLUDE_ID WORD (PAREN_LEFT Property (COMMA Property)* PAREN_RIGHT)? SEMI_COLON
 ;
 
 Mixin : 
@@ -48,7 +59,7 @@ Mixin :
 
 terminal DOT             : '.';
 terminal COMMA           : ',';
-terminal HASH           : '#';
+terminal HASH            : '#';
 terminal COLON    	     : ':';
 terminal SEMI_COLON      : ';';
 terminal PAREN_LEFT      : '(';
@@ -57,23 +68,28 @@ terminal BRACE_LEFT      : '{';
 terminal BRACE_RIGHT     : '}';
 terminal DOLLAR          : '$';
 terminal AMP             : '&';
+
+terminal PLUS            : '+';
+terminal MINUS           : '-';
+terminal DIVIDE          : '/';
+terminal MULTIPLY        : '*';
+
 terminal CHARSET_ID      : '@charset ';
 terminal INCLUDE_ID      : '@include ';
 terminal MIXIN_ID        : '@mixin ';
 
+terminal HEX_DIGIT		 : ('0'..'9'|'a'..'f'|'A'..'F');
+terminal HEX_COLOR       : HASH HEX_DIGIT+;
+
 terminal WORD            : ('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'%')+ ;
-
 terminal VARIABLE        : DOLLAR WORD ;
-
-terminal HEX_COLOR       : HASH WORD;
 
 terminal SELECTOR        :
 	                     AMP COLON WORD
-                         | ((HASH | DOT)? WORD)+
+                         | ( (HASH | DOT)? WORD )+
                          ;
-                         
 
-/*Deactivate INT to prevent warnings */
+/*Deactivate INT to prevent warnings */  
 terminal INT returns ecore::EInt:
 	'INT has been deactivated';
 						 

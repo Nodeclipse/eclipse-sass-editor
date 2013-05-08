@@ -1,5 +1,6 @@
 package com.dubture.editor.sass.ui.editor;
 
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcceptor;
@@ -35,19 +36,22 @@ public class SassHighlightingConfiguration extends DefaultHighlightingConfigurat
 	
 	public TextStyle wordTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(255, 0, 0));
+		textStyle.setColor(new RGB(127, 0, 127));
 		return textStyle;
 	}
 	
 	public TextStyle variableTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(255, 100, 100));
+		textStyle.setStyle(SWT.BOLD);
+		textStyle.setColor(new RGB(127, 0, 127));
 		return textStyle;
 	}
 	
 	public TextStyle selectorTextStyle() {
+		
+		//63, 127, 127
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(0, 0, 255));
+		textStyle.setColor(new RGB(63, 127, 127));
 		return textStyle;
 	}	
 	
@@ -65,19 +69,21 @@ public class SassHighlightingConfiguration extends DefaultHighlightingConfigurat
 	
 	public TextStyle mixinTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(0, 200, 200));
+		textStyle.setStyle(SWT.BOLD);
+		textStyle.setColor(new RGB(63, 127, 127));
 		return textStyle;
 	}
 	
 	public TextStyle includeTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(0, 255, 10));
+		textStyle.setStyle(SWT.BOLD);
+		textStyle.setColor(new RGB(127, 0, 127));
 		return textStyle;
 	}	
 	
 	public TextStyle hexColorTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(40, 170, 40));
+		textStyle.setColor(new RGB(127, 0, 127));
 		return textStyle;
 	}	
 }

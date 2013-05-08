@@ -49,7 +49,7 @@ public class SassSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * VariableDeclaration:
-	 * 	VARIABLE COLON WORD SEMI_COLON
+	 * 	VARIABLE COLON Property SEMI_COLON
 	 * ;
 	 */
 	protected String getVariableDeclarationToken(EObject semanticObject, RuleCall ruleCall, INode node) {

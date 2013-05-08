@@ -40,7 +40,8 @@ public class SassParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRuleAccess().getAlternatives_0(), "rule__Rule__Alternatives_0");
 					put(grammarAccess.getRuleBodyAccess().getAlternatives(), "rule__RuleBody__Alternatives");
 					put(grammarAccess.getPropertyDeclarationAccess().getAlternatives_2(), "rule__PropertyDeclaration__Alternatives_2");
-					put(grammarAccess.getPropertyDeclarationAccess().getAlternatives_2_0_0(), "rule__PropertyDeclaration__Alternatives_2_0_0");
+					put(grammarAccess.getPropertyAccess().getAlternatives(), "rule__Property__Alternatives");
+					put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 					put(grammarAccess.getSassAccess().getGroup(), "rule__Sass__Group__0");
 					put(grammarAccess.getVariableDeclarationAccess().getGroup(), "rule__VariableDeclaration__Group__0");
 					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
@@ -48,9 +49,14 @@ public class SassParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRuleHeadAccess().getGroup_1(), "rule__RuleHead__Group_1__0");
 					put(grammarAccess.getPropertyDeclarationAccess().getGroup(), "rule__PropertyDeclaration__Group__0");
 					put(grammarAccess.getPropertyDeclarationAccess().getGroup_2_0(), "rule__PropertyDeclaration__Group_2_0__0");
+					put(grammarAccess.getPropertyDeclarationAccess().getGroup_2_0_1(), "rule__PropertyDeclaration__Group_2_0_1__0");
 					put(grammarAccess.getPropertyDeclarationAccess().getGroup_2_1(), "rule__PropertyDeclaration__Group_2_1__0");
+					put(grammarAccess.getFunctionAccess().getGroup(), "rule__Function__Group__0");
+					put(grammarAccess.getFunctionAccess().getGroup_3(), "rule__Function__Group_3__0");
 					put(grammarAccess.getCharsetAccess().getGroup(), "rule__Charset__Group__0");
 					put(grammarAccess.getIncludeAccess().getGroup(), "rule__Include__Group__0");
+					put(grammarAccess.getIncludeAccess().getGroup_2(), "rule__Include__Group_2__0");
+					put(grammarAccess.getIncludeAccess().getGroup_2_2(), "rule__Include__Group_2_2__0");
 					put(grammarAccess.getMixinAccess().getGroup(), "rule__Mixin__Group__0");
 					put(grammarAccess.getMixinAccess().getGroup_2(), "rule__Mixin__Group_2__0");
 					put(grammarAccess.getSassAccess().getStatementsAssignment_3(), "rule__Sass__StatementsAssignment_3");
