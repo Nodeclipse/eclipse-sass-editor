@@ -23,8 +23,14 @@ public class AntlrTokenToAttributeIdMapper extends
 			return SassHighlightingConfiguration.BRACE_LEFT;			
 		}  else if ("RULE_BRACE_RIGHT".equals(tokenName)) {
 			return SassHighlightingConfiguration.BRACE_RIGHT;			
-		}  else if ("RULE_SHARP".equals(tokenName)) {
-			return SassHighlightingConfiguration.SHARP_ID;			
+		}  else if ("RULE_HASH".equals(tokenName)) {
+			return SassHighlightingConfiguration.HASH_ID;			
+		}  else if ("RULE_MIXIN_ID".equals(tokenName)) {
+			return SassHighlightingConfiguration.MIXIN_ID;			
+		}  else if ("RULE_INCLUDE_ID".equals(tokenName)) {
+			return SassHighlightingConfiguration.INCLUDE_ID;			
+		}  else if ("RULE_HEX_COLOR".equals(tokenName)) {
+			return SassHighlightingConfiguration.HEX_COLOR_ID;			
 		}
 		
 		return calculateId;

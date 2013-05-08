@@ -5,15 +5,17 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfigurati
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcceptor;
 import org.eclipse.xtext.ui.editor.utils.TextStyle;
 
-public class SassHighlightingConfiguration extends
-		DefaultHighlightingConfiguration {
+public class SassHighlightingConfiguration extends DefaultHighlightingConfiguration {
 
-	public static final String WORD_ID = "word";
-	public static final String VARIABLE_ID = "variable";
-	public static final String SELECTOR_ID = "selector";
-	public static final String BRACE_LEFT = "brace_left";
-	public static final String BRACE_RIGHT = "brace_right";
-	public static final String SHARP_ID = "sharp"; 
+	public static final String WORD_ID			= "word";
+	public static final String VARIABLE_ID		= "variable";
+	public static final String SELECTOR_ID		= "selector";
+	public static final String BRACE_LEFT		= "brace_left";
+	public static final String BRACE_RIGHT		= "brace_right";
+	public static final String HASH_ID			= "hash";
+	public static final String MIXIN_ID			= "mixin";
+	public static final String INCLUDE_ID		= "include";
+	public static final String HEX_COLOR_ID 	= "hex_color"; 
 	
 	@Override
 	public void configure(IHighlightingConfigurationAcceptor acceptor) {
@@ -24,7 +26,10 @@ public class SassHighlightingConfiguration extends
 		acceptor.acceptDefaultHighlighting(SELECTOR_ID, "Selector", selectorTextStyle());
 		acceptor.acceptDefaultHighlighting(BRACE_LEFT, "Braces", braceTextStyle());
 		acceptor.acceptDefaultHighlighting(BRACE_RIGHT, "Braces", braceTextStyle());
-		acceptor.acceptDefaultHighlighting(SHARP_ID, "Sharp", sharpTextStyle());
+		acceptor.acceptDefaultHighlighting(HASH_ID, "Hash", sharpTextStyle());
+		acceptor.acceptDefaultHighlighting(HEX_COLOR_ID, "Hex Color", hexColorTextStyle());
+		acceptor.acceptDefaultHighlighting(MIXIN_ID, "Mixin", mixinTextStyle());
+		acceptor.acceptDefaultHighlighting(INCLUDE_ID, "Include", includeTextStyle());
 		
 	}
 	
@@ -36,22 +41,43 @@ public class SassHighlightingConfiguration extends
 	
 	public TextStyle variableTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(255, 10, 50));
+		textStyle.setColor(new RGB(255, 100, 100));
 		return textStyle;
-	}	
+	}
+	
 	public TextStyle selectorTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(255, 0, 0));
+		textStyle.setColor(new RGB(0, 0, 255));
 		return textStyle;
 	}	
+	
 	public TextStyle braceTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		textStyle.setColor(new RGB(10, 10, 10));
 		return textStyle;
-	}	
+	}
+	
 	public TextStyle sharpTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		textStyle.setColor(new RGB(255, 0, 200));
+		return textStyle;
+	}	
+	
+	public TextStyle mixinTextStyle() {
+		TextStyle textStyle = defaultTextStyle().copy();
+		textStyle.setColor(new RGB(0, 200, 200));
+		return textStyle;
+	}
+	
+	public TextStyle includeTextStyle() {
+		TextStyle textStyle = defaultTextStyle().copy();
+		textStyle.setColor(new RGB(0, 255, 10));
+		return textStyle;
+	}	
+	
+	public TextStyle hexColorTextStyle() {
+		TextStyle textStyle = defaultTextStyle().copy();
+		textStyle.setColor(new RGB(40, 170, 40));
 		return textStyle;
 	}	
 }

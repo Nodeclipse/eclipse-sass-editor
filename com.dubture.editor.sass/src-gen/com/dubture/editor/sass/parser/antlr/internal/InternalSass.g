@@ -138,16 +138,12 @@ ruleVariableDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatyp
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getVariableDeclarationAccess().getVariableParserRuleCall_0()); 
-    }
-    this_Variable_0=ruleVariable    {
-		$current.merge(this_Variable_0);
+(    this_VARIABLE_0=RULE_VARIABLE    {
+		$current.merge(this_VARIABLE_0);
     }
 
     { 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_VARIABLE_0, grammarAccess.getVariableDeclarationAccess().getVARIABLETerminalRuleCall_0()); 
     }
     this_COLON_1=RULE_COLON    {
 		$current.merge(this_COLON_1);
@@ -260,16 +256,12 @@ ruleRuleHead returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getRuleHeadAccess().getSelectorParserRuleCall_0()); 
-    }
-    this_Selector_0=ruleSelector    {
-		$current.merge(this_Selector_0);
+(    this_SELECTOR_0=RULE_SELECTOR    {
+		$current.merge(this_SELECTOR_0);
     }
 
     { 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_SELECTOR_0, grammarAccess.getRuleHeadAccess().getSELECTORTerminalRuleCall_0()); 
     }
 (    this_COMMA_1=RULE_COMMA    {
 		$current.merge(this_COMMA_1);
@@ -278,16 +270,12 @@ ruleRuleHead returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken(
     { 
     newLeafNode(this_COMMA_1, grammarAccess.getRuleHeadAccess().getCOMMATerminalRuleCall_1_0()); 
     }
-
-    { 
-        newCompositeNode(grammarAccess.getRuleHeadAccess().getSelectorParserRuleCall_1_1()); 
-    }
-    this_Selector_2=ruleSelector    {
-		$current.merge(this_Selector_2);
+    this_SELECTOR_2=RULE_SELECTOR    {
+		$current.merge(this_SELECTOR_2);
     }
 
     { 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_SELECTOR_2, grammarAccess.getRuleHeadAccess().getSELECTORTerminalRuleCall_1_1()); 
     }
 )*)
     ;
@@ -388,49 +376,53 @@ rulePropertyDeclaration returns [AntlrDatatypeRuleToken current=new AntlrDatatyp
     newLeafNode(this_WORD_2, grammarAccess.getPropertyDeclarationAccess().getWORDTerminalRuleCall_2_0_0_0()); 
     }
 
-    |
-    { 
-        newCompositeNode(grammarAccess.getPropertyDeclarationAccess().getVariableParserRuleCall_2_0_0_1()); 
-    }
-    this_Variable_3=ruleVariable    {
-		$current.merge(this_Variable_3);
+    |    this_VARIABLE_3=RULE_VARIABLE    {
+		$current.merge(this_VARIABLE_3);
     }
 
     { 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_VARIABLE_3, grammarAccess.getPropertyDeclarationAccess().getVARIABLETerminalRuleCall_2_0_0_1()); 
     }
-)+    this_SEMI_COLON_4=RULE_SEMI_COLON    {
-		$current.merge(this_SEMI_COLON_4);
+
+    |    this_HEX_COLOR_4=RULE_HEX_COLOR    {
+		$current.merge(this_HEX_COLOR_4);
     }
 
     { 
-    newLeafNode(this_SEMI_COLON_4, grammarAccess.getPropertyDeclarationAccess().getSEMI_COLONTerminalRuleCall_2_0_1()); 
+    newLeafNode(this_HEX_COLOR_4, grammarAccess.getPropertyDeclarationAccess().getHEX_COLORTerminalRuleCall_2_0_0_2()); 
+    }
+)+    this_SEMI_COLON_5=RULE_SEMI_COLON    {
+		$current.merge(this_SEMI_COLON_5);
+    }
+
+    { 
+    newLeafNode(this_SEMI_COLON_5, grammarAccess.getPropertyDeclarationAccess().getSEMI_COLONTerminalRuleCall_2_0_1()); 
     }
 )
-    |(    this_BRACE_LEFT_5=RULE_BRACE_LEFT    {
-		$current.merge(this_BRACE_LEFT_5);
+    |(    this_BRACE_LEFT_6=RULE_BRACE_LEFT    {
+		$current.merge(this_BRACE_LEFT_6);
     }
 
     { 
-    newLeafNode(this_BRACE_LEFT_5, grammarAccess.getPropertyDeclarationAccess().getBRACE_LEFTTerminalRuleCall_2_1_0()); 
+    newLeafNode(this_BRACE_LEFT_6, grammarAccess.getPropertyDeclarationAccess().getBRACE_LEFTTerminalRuleCall_2_1_0()); 
     }
 (
     { 
         newCompositeNode(grammarAccess.getPropertyDeclarationAccess().getPropertyDeclarationParserRuleCall_2_1_1()); 
     }
-    this_PropertyDeclaration_6=rulePropertyDeclaration    {
-		$current.merge(this_PropertyDeclaration_6);
+    this_PropertyDeclaration_7=rulePropertyDeclaration    {
+		$current.merge(this_PropertyDeclaration_7);
     }
 
     { 
         afterParserOrEnumRuleCall();
     }
-)*    this_BRACE_RIGHT_7=RULE_BRACE_RIGHT    {
-		$current.merge(this_BRACE_RIGHT_7);
+)*    this_BRACE_RIGHT_8=RULE_BRACE_RIGHT    {
+		$current.merge(this_BRACE_RIGHT_8);
     }
 
     { 
-    newLeafNode(this_BRACE_RIGHT_7, grammarAccess.getPropertyDeclarationAccess().getBRACE_RIGHTTerminalRuleCall_2_1_2()); 
+    newLeafNode(this_BRACE_RIGHT_8, grammarAccess.getPropertyDeclarationAccess().getBRACE_RIGHTTerminalRuleCall_2_1_2()); 
     }
 )))
     ;
@@ -558,16 +550,12 @@ ruleMixin returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     { 
     newLeafNode(this_PAREN_LEFT_2, grammarAccess.getMixinAccess().getPAREN_LEFTTerminalRuleCall_2_0()); 
     }
-
-    { 
-        newCompositeNode(grammarAccess.getMixinAccess().getVariableParserRuleCall_2_1()); 
-    }
-    this_Variable_3=ruleVariable    {
-		$current.merge(this_Variable_3);
+    this_VARIABLE_3=RULE_VARIABLE    {
+		$current.merge(this_VARIABLE_3);
     }
 
     { 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_VARIABLE_3, grammarAccess.getMixinAccess().getVARIABLETerminalRuleCall_2_1()); 
     }
     this_PAREN_RIGHT_4=RULE_PAREN_RIGHT    {
 		$current.merge(this_PAREN_RIGHT_4);
@@ -583,111 +571,11 @@ ruleMixin returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
-// Entry rule entryRuleSelector
-entryRuleSelector returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getSelectorRule()); } 
-	 iv_ruleSelector=ruleSelector 
-	 { $current=$iv_ruleSelector.current.getText(); }  
-	 EOF 
-;
-
-// Rule Selector
-ruleSelector returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((    this_AMP_0=RULE_AMP    {
-		$current.merge(this_AMP_0);
-    }
-
-    { 
-    newLeafNode(this_AMP_0, grammarAccess.getSelectorAccess().getAMPTerminalRuleCall_0_0()); 
-    }
-    this_COLON_1=RULE_COLON    {
-		$current.merge(this_COLON_1);
-    }
-
-    { 
-    newLeafNode(this_COLON_1, grammarAccess.getSelectorAccess().getCOLONTerminalRuleCall_0_1()); 
-    }
-    this_WORD_2=RULE_WORD    {
-		$current.merge(this_WORD_2);
-    }
-
-    { 
-    newLeafNode(this_WORD_2, grammarAccess.getSelectorAccess().getWORDTerminalRuleCall_0_2()); 
-    }
-)
-    |((    this_SHARP_3=RULE_SHARP    {
-		$current.merge(this_SHARP_3);
-    }
-
-    { 
-    newLeafNode(this_SHARP_3, grammarAccess.getSelectorAccess().getSHARPTerminalRuleCall_1_0_0()); 
-    }
-
-    |    this_DOT_4=RULE_DOT    {
-		$current.merge(this_DOT_4);
-    }
-
-    { 
-    newLeafNode(this_DOT_4, grammarAccess.getSelectorAccess().getDOTTerminalRuleCall_1_0_1()); 
-    }
-)?    this_WORD_5=RULE_WORD    {
-		$current.merge(this_WORD_5);
-    }
-
-    { 
-    newLeafNode(this_WORD_5, grammarAccess.getSelectorAccess().getWORDTerminalRuleCall_1_1()); 
-    }
-)+)
-    ;
-
-
-
-
-
-// Entry rule entryRuleVariable
-entryRuleVariable returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getVariableRule()); } 
-	 iv_ruleVariable=ruleVariable 
-	 { $current=$iv_ruleVariable.current.getText(); }  
-	 EOF 
-;
-
-// Rule Variable
-ruleVariable returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(    this_DOLLAR_0=RULE_DOLLAR    {
-		$current.merge(this_DOLLAR_0);
-    }
-
-    { 
-    newLeafNode(this_DOLLAR_0, grammarAccess.getVariableAccess().getDOLLARTerminalRuleCall_0()); 
-    }
-    this_WORD_1=RULE_WORD    {
-		$current.merge(this_WORD_1);
-    }
-
-    { 
-    newLeafNode(this_WORD_1, grammarAccess.getVariableAccess().getWORDTerminalRuleCall_1()); 
-    }
-)
-    ;
-
-
-
-
-
 RULE_DOT : '.';
 
 RULE_COMMA : ',';
 
-RULE_SHARP : '#';
+RULE_HASH : '#';
 
 RULE_COLON : ':';
 
@@ -712,6 +600,12 @@ RULE_INCLUDE_ID : '@include ';
 RULE_MIXIN_ID : '@mixin ';
 
 RULE_WORD : ('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'%')+;
+
+RULE_VARIABLE : RULE_DOLLAR RULE_WORD;
+
+RULE_HEX_COLOR : RULE_HASH RULE_WORD;
+
+RULE_SELECTOR : (RULE_AMP RULE_COLON RULE_WORD|((RULE_HASH|RULE_DOT)? RULE_WORD)+);
 
 RULE_INT : 'INT has been deactivated';
 

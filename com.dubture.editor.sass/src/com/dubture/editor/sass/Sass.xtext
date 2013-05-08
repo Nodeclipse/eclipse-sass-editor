@@ -9,7 +9,7 @@ Sass:
 ;
 
 VariableDeclaration:
-	Variable COLON WORD SEMI_COLON
+	VARIABLE COLON WORD SEMI_COLON
 ;
 
 Rule:
@@ -17,7 +17,7 @@ Rule:
 ;
 
 RuleHead:
-	Selector ( COMMA Selector )*
+	SELECTOR ( COMMA SELECTOR )*
 ;
 
 RuleBody:
@@ -28,7 +28,7 @@ RuleBody:
 PropertyDeclaration:
 	WORD COLON
 	(
-		(WORD | Variable)+ SEMI_COLON
+		(WORD | VARIABLE | HEX_COLOR)+ SEMI_COLON
 	|
 		BRACE_LEFT (PropertyDeclaration)* BRACE_RIGHT
 	)
@@ -43,21 +43,12 @@ Include:
 ;
 
 Mixin : 
-	MIXIN_ID WORD (PAREN_LEFT Variable PAREN_RIGHT)?
-;
-
-Selector :
-	AMP COLON WORD
-	| ((SHARP | DOT)? WORD)+
-;
-
-Variable :
-	DOLLAR WORD
+	MIXIN_ID WORD (PAREN_LEFT VARIABLE PAREN_RIGHT)?
 ;
 
 terminal DOT             : '.';
 terminal COMMA           : ',';
-terminal SHARP           : '#';
+terminal HASH           : '#';
 terminal COLON    	     : ':';
 terminal SEMI_COLON      : ';';
 terminal PAREN_LEFT      : '(';
@@ -72,6 +63,15 @@ terminal MIXIN_ID        : '@mixin ';
 
 terminal WORD            : ('a'..'z'|'A'..'Z'|'0'..'9'|'-'|'%')+ ;
 
+terminal VARIABLE        : DOLLAR WORD ;
+
+terminal HEX_COLOR       : HASH WORD;
+
+terminal SELECTOR        :
+	                     AMP COLON WORD
+                         | ((HASH | DOT)? WORD)+
+                         ;
+                         
 
 /*Deactivate INT to prevent warnings */
 terminal INT returns ecore::EInt:
